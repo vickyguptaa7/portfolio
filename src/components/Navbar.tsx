@@ -12,14 +12,16 @@ function Navbar() {
           to="/"
           className="flex gap-2 py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
         >
-          {/* <img src="" alt="logo" /> */}
           <h1 className="font-[650] tracking-wider text-lg md:text-xl">
-            VICKY GUPTA
+            <span className="text-[color:var(--primary-text-color)] text-lg md:text-xl">
+              &lt;V/&gt;
+            </span>
+            &nbsp; VICKY GUPTA
           </h1>
         </Link>
         {/* For Screens greater than 640px */}
         <div className="hidden sm:flex">
-          <ul className="list-none flex items-center gap-8 font-[650] tracking-wider text-md ">
+          <ul className="list-none flex items-center gap-7 font-[650] tracking-wider text-md ">
             <Link
               to="/"
               className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
@@ -49,7 +51,7 @@ function Navbar() {
         {/* For Screens less than 640px */}
         <div className="sm:hidden">
           <button
-            className="py-5 px-2 md:px-4 md:py-6"
+            className="px-2 py-5 md:px-4 md:py-6"
             onClick={() => setToggle(!toggle)}
           >
             {toggle ? (

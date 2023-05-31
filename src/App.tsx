@@ -1,9 +1,12 @@
 import "./App.css";
-import Navbar from "./components/navbar";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 function App() {
   return (
-    <div className=" text-[90%] md:text-[100%] ">
+    <div className="min-w-[320px]">
       <Navbar />
+      <Home />
+      
     </div>
   );
 }

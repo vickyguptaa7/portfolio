@@ -1,0 +1,15 @@
+.mouse {
+    transform: translateY(0);
+    animation: scrollAnimation 1.5s infinite;
+  }
+  
+  @keyframes scrollAnimation {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+  }
