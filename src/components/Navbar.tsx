@@ -21,30 +21,38 @@ function Navbar() {
         </Link>
         {/* For Screens greater than 640px */}
         <div className="hidden sm:flex">
-          <ul className="list-none flex items-center gap-7 font-[650] tracking-wider text-md ">
+          <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
             <Link
               to="/"
-              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
+              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group "
             >
+              <span className="invisible group-hover:visible">&lt;</span>
               HOME
+              <span className="invisible group-hover:visible">&gt;</span>
             </Link>
             <Link
               to="/"
-              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
+              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
             >
+              <span className="invisible group-hover:visible">&lt;</span>
               ABOUT
+              <span className="invisible group-hover:visible">&gt;</span>
             </Link>
             <Link
               to="/"
-              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
+              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
             >
+              <span className="invisible group-hover:visible">&lt;</span>
               PROJECTS
+              <span className="invisible group-hover:visible">&gt;</span>
             </Link>
             <Link
               to="/"
-              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
+              className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
             >
+              <span className="invisible group-hover:visible">&lt;</span>
               CONTACT
+              <span className="invisible group-hover:visible">&gt;</span>
             </Link>
           </ul>
         </div>
