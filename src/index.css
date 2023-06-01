@@ -26,3 +26,7 @@
     font-size: 14px;
   }
 }
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
