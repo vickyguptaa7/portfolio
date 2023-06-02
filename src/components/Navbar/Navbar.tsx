@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import Wrapper from "./wrapper";
+import Wrapper from "../Wrapper/wrapper";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);

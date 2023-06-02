@@ -1,7 +1,7 @@
 import TypewriterComponent from "typewriter-effect";
-import myImg from "../assets/myimg.png";
-import "../styles.css";
-import Wrapper from "./wrapper";
+import myImg from "../../assets/myimg.png";
+import "../../styles.css";
+import Wrapper from "../Wrapper/wrapper";
 
 function Home() {
   return (

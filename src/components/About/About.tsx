@@ -1,4 +1,4 @@
-import Wrapper from "./wrapper";
+import Wrapper from "../Wrapper/wrapper";
 
 function About() {
   return (
