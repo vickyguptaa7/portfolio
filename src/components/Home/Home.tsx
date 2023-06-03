@@ -75,7 +75,7 @@ function Home() {
         <div className="absolute h-10 w-6 border-2 border-black  rounded-3xl bottom-6 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
           <div className="w-1.5 my-1 bg-black rounded-full aspect-square mouse"></div>
         </div>
-        <div className="absolute overflow-hidden change aspect-auto h-96 hidden md:flex  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
+        <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
           <img
             src={myImg}
             alt=""
