@@ -1,3 +1,4 @@
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import TypewriterComponent from "typewriter-effect";
 import myImg from "../../assets/myimg.png";
 import "../../styles.css";
@@ -6,7 +7,7 @@ import Wrapper from "../Wrapper/wrapper";
 function Home() {
   return (
     <Wrapper>
-      <section className="relative flex min-h-[500px] items-center justify-between px-4 mt-16 md:mt-0 md:px-8 md:h-screen md:min-h-[700px]">
+      <section className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-0 md:px-8 md:h-screen md:min-h-[800px]">
         <div className="flex flex-col items-start justify-center cursor-default ">
           <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;html&gt;
@@ -62,9 +63,33 @@ function Home() {
           <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;/p&gt;
           </p>
-          <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-4 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
-            View My CV
+          <p className="px-3 mt-4 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
+            &lt;button&gt;
+          </p>
+          <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
+            Download Resume
           </button>
+          <div className="flex items-center gap-4 justify-center mt-3 mx-9 text-[color:var(--primary-text-color)]">
+            <button
+              className="duration-300 hover:scale-110 hover:translate-x-2"
+              onClick={() => {
+                window.open("https://github.com/vickyguptaa7");
+              }}
+            >
+              <BsGithub className="text-xl" />
+            </button>
+            <button
+              className="duration-300 hover:scale-110 hover:translate-x-2"
+              onClick={() => {
+                window.open("https://www.linkedin.com/in/vickyguptaa7/");
+              }}
+            >
+              <BsLinkedin className="text-xl" />
+            </button>
+          </div>
+          <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
+            &lt;/button&gt;
+          </p>
           <p className="px-3 mt-4 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;/body&gt;
           </p>

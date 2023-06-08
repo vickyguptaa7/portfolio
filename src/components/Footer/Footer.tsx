@@ -15,7 +15,6 @@ function Footer() {
               }}
               animate={{
                 translateY: -document.documentElement.scrollHeight-200,
-                translateX: Math.random() * 20,
                 scale: 1,
                 transition: {
                   repeat: Infinity,
