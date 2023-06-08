@@ -14,7 +14,7 @@
   margin: 0 4px;
   border-radius: 100%;
   box-shadow: 0 0 0 2px #02cbf744, 0 0 5px #02cbf7, 0 0 10px #02cbf7;
-  z-index: -10;
+  z-index: -30;
   /* animation: animate forwards linear infinite;
   animation-duration: calc(10s); */
 }

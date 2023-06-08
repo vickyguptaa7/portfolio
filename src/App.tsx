@@ -5,7 +5,7 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
-    <div className="min-w-[360px]">
+    <div className="min-w-[360px] overflow-hidden">
       <Navbar />
       <Home />
       <About />

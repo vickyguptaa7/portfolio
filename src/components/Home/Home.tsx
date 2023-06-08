@@ -7,7 +7,7 @@ import Wrapper from "../Wrapper/wrapper";
 function Home() {
   return (
     <Wrapper>
-      <section className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-0 md:px-8 md:h-screen md:min-h-[800px]">
+      <section className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-8 md:px-8 md:h-screen  md:min-h-[800px]">
         <div className="flex flex-col items-start justify-center cursor-default ">
           <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;html&gt;
@@ -69,22 +69,22 @@ function Home() {
           <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
             Download Resume
           </button>
-          <div className="flex items-center gap-4 justify-center mt-3 mx-9 text-[color:var(--primary-text-color)]">
+          <div className="flex items-center gap-4 justify-center mt-3 mx-9 text-[color:var(--tertiary-text-color)]">
             <button
-              className="duration-300 hover:scale-110 hover:translate-x-2"
+              className="duration-300 hover:scale-110 hover:translate-x-2 text-[color:var(--tertiary-text-color)]"
               onClick={() => {
                 window.open("https://github.com/vickyguptaa7");
               }}
             >
-              <BsGithub className="text-xl" />
+              <BsGithub className="text-2xl" />
             </button>
             <button
-              className="duration-300 hover:scale-110 hover:translate-x-2"
+              className="duration-300 hover:scale-110 hover:translate-x-2 text-[color:var(--primary-text-color)]"
               onClick={() => {
                 window.open("https://www.linkedin.com/in/vickyguptaa7/");
               }}
             >
-              <BsLinkedin className="text-xl" />
+              <BsLinkedin className="text-2xl" />
             </button>
           </div>
           <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
@@ -97,7 +97,7 @@ function Home() {
             &lt;/html&gt;
           </p>
         </div>
-        <div className="absolute h-10 w-6 border-2 border-black  rounded-3xl bottom-6 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
+        <div className="absolute h-10 w-6 border-2 border-black  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
           <div className="w-1.5 my-1 bg-black rounded-full aspect-square mouse"></div>
         </div>
         <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
