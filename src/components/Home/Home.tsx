@@ -7,7 +7,7 @@ import Wrapper from "../Wrapper/wrapper";
 function Home() {
   return (
     <Wrapper>
-      <section className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-8 md:px-8 md:h-screen  md:min-h-[800px]">
+      <section id="home" className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-8 md:px-8 md:h-screen  md:min-h-[800px]">
         <div className="flex flex-col items-start justify-center cursor-default ">
           <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;html&gt;
@@ -41,7 +41,7 @@ function Home() {
           <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;/p&gt;
           </p>
-          <p className="flex max-w-md pt-2 text-2xl font-semibold tracking-wider duration-1000 lg:max-w-lg px-9 hover:translate-x-8 hover:duration-300 hover:scale-105">
+          <div className="flex max-w-md pt-2 text-2xl font-semibold tracking-wider duration-1000 lg:max-w-lg px-9 hover:translate-x-8 hover:duration-300 hover:scale-105">
             I'm&nbsp;
             <TypewriterComponent
               options={{
@@ -59,7 +59,7 @@ function Home() {
                   "text-[color:var(--primary-text-color)] text-xl sm:text-2xl font-semibold drop-shadow-lg shadow-black",
               }}
             />
-          </p>
+          </div>
           <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;/p&gt;
           </p>
