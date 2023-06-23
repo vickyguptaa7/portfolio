@@ -4,6 +4,8 @@ import { twMerge } from "tailwind-merge";
 import ICONS from "../../assets/tech stack/index";
 import Wrapper from "../Wrapper/wrapper";
 
+import {motion} from "framer-motion"
+
 import  "../../styles.css"
 // import Wrapper from "../Wrapper/wrapper";
 // c for
@@ -22,8 +24,8 @@ const TECH_STACK = [
     id: 2,
     name: "Frontend",
     list: [
-      { id: 1, name: "HTML5", icon: ICONS.html_icon, className:"w-20 h-20" },
-      { id: 2, name: "CSS3", icon: ICONS.css_icon, className:"w-20 h-20" },
+      { id: 1, name: "HTML5", icon: ICONS.html_icon, className:"w-[72px] h-[72px]" },
+      { id: 2, name: "CSS3", icon: ICONS.css_icon, className:"w-[72px] h-[72px]" },
       { id: 3, name: "React", icon: ICONS.react_icon, className:"w-20 h-20" },
       { id: 4, name: "Redux", icon: ICONS.redux_icon, className:"w-20 h-20" },
       { id: 5, name: "Tailwind", icon: ICONS.tailwind_icon, className:"w-20 h-20" },
@@ -118,13 +120,24 @@ function Skill() {
               <div className="flex flex-wrap items-center justify-center w-full gap-12 sm:justify-around">
                 {techStack?.list.map((item) => {
                   return (
-                    <div
+                    <motion.div
                       key={item.id}
                       className={twMerge("flex items-center justify-center w-12 h-12 gelatine",item.className)}
                       title={item.name}
+                      initial={{
+                        translateY: 8+Math.random()*8,
+                      }}
+                      animate={{
+                        translateY: -(8+Math.random()*8),
+                        transition: {
+                          repeat: Infinity,
+                          repeatType: "mirror",
+                          duration: 2,
+                        },
+                      }}
                     >
                       <img src={item.icon} className="object-cover" alt="" />
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
