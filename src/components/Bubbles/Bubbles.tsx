@@ -1,25 +1,27 @@
 import { motion } from "framer-motion";
-import "./Footer.styles.css";
-function Footer() {
+import "./Bubbles.styles.css";
+
+function Bubbles() {
+
   return (
-    <div className="w-screen h-screen">
-      <div className="flex justify-between bubble">
-        {[...Array(20)].map((_,indx) => {
+    <div className="h-1">
+      <div className="flex justify-between h-full bubble">
+        {[...Array(20)].map((_, indx) => {
           return (
             <motion.span
               key={indx}
               className=""
               initial={{
-                scale: 0,
-                translateY: document.documentElement.scrollHeight,
+                scale: 0.1,
+                translateY: 1000 + 200,
               }}
               animate={{
-                translateY: -document.documentElement.scrollHeight-200,
+                translateY: -1000,
                 scale: 1,
                 transition: {
                   repeat: Infinity,
                   repeatType: "loop",
-                  duration: Math.random() * 10 + 10,
+                  duration: Math.random() * 10 + 15,
                 },
               }}
             ></motion.span>
@@ -30,4 +32,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Bubbles;

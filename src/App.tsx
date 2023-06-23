@@ -1,6 +1,7 @@
+
 import "./App.css";
 import About from "./components/About/About";
-import Footer from "./components/Footer/Footer";
+import Bubbles from "./components/Bubbles/Bubbles";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Skill from "./components/Tech Stack/TechStack";
@@ -9,9 +10,10 @@ function App() {
     <div className="min-w-[360px] overflow-hidden">
       <Navbar />
       <Home />
+      <Bubbles  />
       <About />
       <Skill />
-      <Footer />
+      <Bubbles  />
     </div>
   );
 }
