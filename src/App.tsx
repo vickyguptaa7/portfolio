@@ -3,7 +3,7 @@ import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
-import Skill from "./components/Skills/Skill";
+import Skill from "./components/Tech Stack/TechStack";
 function App() {
   return (
     <div className="min-w-[360px] overflow-hidden">
