@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className="w-screen h-screen">
       <div className="flex justify-between bubble">
-        {[...Array(20)].map((ele,indx) => {
+        {[...Array(20)].map((_,indx) => {
           return (
             <motion.span
               key={indx}
