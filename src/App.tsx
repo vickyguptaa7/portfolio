@@ -4,7 +4,9 @@ import About from "./components/About/About";
 import Bubbles from "./components/Bubbles/Bubbles";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
+import Projects from "./components/Projects/Projects";
 import Skill from "./components/Tech Stack/TechStack";
+
 function App() {
   return (
     <div className="min-w-[360px] overflow-hidden">
@@ -13,6 +15,7 @@ function App() {
       <Bubbles  />
       <About />
       <Skill />
+      <Projects />
       <Bubbles  />
     </div>
   );

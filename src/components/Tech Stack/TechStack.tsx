@@ -125,7 +125,7 @@ function Skill() {
   const [currentStackType, setCurrentStackType] = useState(TECH_STACK[0].name);
   const techStack = TECH_STACK.find((item) => item.name === currentStackType);
   return (
-    <section className="mt-64 mb-12 text-black">
+    <section className="mt-64 mb-12">
       <Wrapper className="flex flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center">
