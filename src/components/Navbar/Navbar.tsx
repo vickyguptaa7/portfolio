@@ -5,7 +5,14 @@ import Wrapper from "../Wrapper/wrapper";
 
 function Navbar() {
   const [toggle, setToggle] = useState(false);
-
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "end",
+    });
+  };
   return (
     <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-white">
       <Wrapper>
@@ -24,9 +31,10 @@ function Navbar() {
           {/* For Screens greater than 640px */}
           <div className="hidden sm:flex">
             <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
-              <Link 
+              <Link
                 to="#home"
                 className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group "
+                onClick={() => scrollToSection("home")}
               >
                 <span className="invisible group-hover:visible">&lt;</span>
                 HOME
@@ -35,6 +43,7 @@ function Navbar() {
               <Link
                 to="#about"
                 className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
+                onClick={() => scrollToSection("about")}
               >
                 <span className="invisible group-hover:visible">&lt;</span>
                 ABOUT
@@ -76,16 +85,22 @@ function Navbar() {
           {toggle ? (
             <ul className="list-none flex flex-col items-end justify-center font-[650] tracking-wider text-md w-full ">
               <Link
-                to="/"
+                to="/#home"
                 className="py-6 w-full flex justify-end px-2 hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => {
+                  setToggle(!toggle);
+                  scrollToSection("home");
+                }}
               >
                 HOME
               </Link>
               <Link
                 to="/"
                 className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => {
+                  setToggle(!toggle);
+                  scrollToSection("about");
+                }}
               >
                 ABOUT
               </Link>

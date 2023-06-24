@@ -7,7 +7,7 @@ import Wrapper from "../Wrapper/wrapper";
 function Home() {
   return (
     <Wrapper>
-      <section id="home" className="relative flex min-h-[580px] items-center justify-between px-4 mt-16 md:mt-8 md:px-8 md:h-screen  md:min-h-[800px]">
+      <section id="home" className="relative flex min-h-[580px] items-center justify-between px-4 pt-16 md:pt-8 md:px-8 md:h-screen  md:min-h-[800px]">
         <div className="flex flex-col items-start justify-center cursor-default ">
           <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
             &lt;html&gt;

@@ -4,7 +4,7 @@ import Wrapper from "../Wrapper/wrapper";
 
 function About() {
   return (
-    <section id="about" className="mt-24">
+    <section id="about" className="pt-24">
       <div className="flex flex-col items-center justify-center px-8 header">
         <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center">
           ABOUT ME

@@ -4,8 +4,8 @@ import "./Bubbles.styles.css";
 function Bubbles() {
 
   return (
-    <div className="h-1">
-      <div className="flex justify-between h-full bubble">
+    <div className="relative h-1">
+      <div className="absolute flex justify-between w-full bubble">
         {[...Array(20)].map((_, indx) => {
           return (
             <motion.span
@@ -13,10 +13,10 @@ function Bubbles() {
               className=""
               initial={{
                 scale: 0.1,
-                translateY: 1000 + 200,
+                translateY: 200 ,
               }}
               animate={{
-                translateY: -1000,
+                translateY: -1100,
                 scale: 1,
                 transition: {
                   repeat: Infinity,
