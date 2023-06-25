@@ -1,125 +1,12 @@
 import { useState } from "react";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { twMerge } from "tailwind-merge";
-import ICONS from "../../assets/tech stack/index";
 import Wrapper from "../Wrapper/wrapper";
 
 import { motion } from "framer-motion";
 
+import TECH_STACK from "../../constant/techStackDetails";
 import "../../styles.css";
-// import Wrapper from "../Wrapper/wrapper";
-// c for
-const TECH_STACK = [
-  {
-    id: 1,
-    name: "Language",
-    list: [
-      { id: 1, name: "C", icon: ICONS.c_icon, className: "w-20 h-20" },
-      { id: 2, name: "C++", icon: ICONS.cpp_icon, className: "w-20 h-20" },
-      {
-        id: 3,
-        name: "Javascript",
-        icon: ICONS.javascript_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 4,
-        name: "TypeScript",
-        icon: ICONS.typescript_icon,
-        className: "w-20 h-20",
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Frontend",
-    list: [
-      {
-        id: 1,
-        name: "HTML5",
-        icon: ICONS.html_icon,
-        className: "w-[72px] h-[72px]",
-      },
-      {
-        id: 2,
-        name: "CSS3",
-        icon: ICONS.css_icon,
-        className: "w-[72px] h-[72px]",
-      },
-      { id: 3, name: "React", icon: ICONS.react_icon, className: "w-20 h-20" },
-      { id: 4, name: "Redux", icon: ICONS.redux_icon, className: "w-20 h-20" },
-      {
-        id: 5,
-        name: "Tailwind",
-        icon: ICONS.tailwind_icon,
-        className: "w-20 h-20",
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Backend",
-    list: [
-      {
-        id: 1,
-        name: "Nodejs",
-        icon: ICONS.nodejs_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 2,
-        name: "Express",
-        icon: ICONS.express_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 3,
-        name: "Firebase",
-        icon: ICONS.firebase_icon,
-        className: "w-20 h-20",
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Database",
-    list: [
-      { id: 1, name: "MongoDB", icon: ICONS.mongodb_icon, className: "mr-8" },
-      { id: 2, name: "MySQL", icon: ICONS.mysql_icon, className: "w-24 h-24" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Tools",
-    list: [
-      { id: 1, name: "Git", icon: ICONS.git_icon, className: "w-20 h-20" },
-      {
-        id: 2,
-        name: "Github",
-        icon: ICONS.github_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 3,
-        name: "VS Code",
-        icon: ICONS.vscode_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 4,
-        name: "Netlify",
-        icon: ICONS.netlify_icon,
-        className: "w-20 h-20",
-      },
-      {
-        id: 5,
-        name: "Render",
-        icon: ICONS.render_icon,
-        className: "w-24 h-24",
-      },
-    ],
-  },
-];
 
 function Skill() {
   const [currentStackType, setCurrentStackType] = useState(TECH_STACK[0].name);

@@ -12,11 +12,11 @@ function App() {
     <div className="min-w-[360px] overflow-hidden">
       <Navbar />
       <Home />
-      <Bubbles  />
+      <Bubbles yStart={200} yEnd={-1100}  />
       <About />
       <Skill />
       <Projects />
-      <Bubbles  />
+      <Bubbles yStart={200} yEnd={-2500}  />
     </div>
   );
 }

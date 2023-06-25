@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import "./Bubbles.styles.css";
-
-function Bubbles() {
-
+interface IPROPS {
+  yStart: number;
+  yEnd: number;
+}
+const Bubbles: React.FC<IPROPS> = ({ yStart, yEnd }) => {
   return (
     <div className="relative h-1">
       <div className="absolute flex justify-between w-full bubble">
@@ -13,10 +15,10 @@ function Bubbles() {
               className=""
               initial={{
                 scale: 0.1,
-                translateY: 200 ,
+                translateY: yStart,
               }}
               animate={{
-                translateY: -1100,
+                translateY: yEnd,
                 scale: 1,
                 transition: {
                   repeat: Infinity,
@@ -30,6 +32,6 @@ function Bubbles() {
       </div>
     </div>
   );
-}
+};
 
 export default Bubbles;
