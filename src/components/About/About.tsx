@@ -3,10 +3,13 @@ import CODING_PROFILES from "../../constant/codingProfiles";
 import Tooltip from "../UI/Tooltip";
 import Wrapper from "../Wrapper/wrapper";
 
+import { FaCode } from "react-icons/fa";
+import { MdSchool } from "react-icons/md";
 import college from "../../assets/Education/jmi.webp";
 import school from "../../assets/Education/oxford.png";
-import { MdSchool } from "react-icons/md";
-import { FaCode } from "react-icons/fa";
+
+import { motion } from "framer-motion";
+import image from "../../assets/myimg.png";
 
 function About() {
   return (
@@ -20,27 +23,44 @@ function About() {
       <div className="w-full py-12 bg-[color:var(--color-primary)] mt-24 relative pb-24 md:pb-16">
         <Wrapper className="flex flex-col items-center justify-center gap-8">
           <div className="relative flex flex-col items-center justify-center gap-4">
+            {/* About Me */}
+            <motion.div
+              className="bg-white border-4 border-white rounded-full w-36 aspect-square"
+              initial={{
+                translateY: 8,
+              }}
+              animate={{
+                translateY: -8,
+                transition: {
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  duration: 2,
+                },
+              }}
+            >
+              <img
+                src={image}
+                alt=""
+                className="flex items-center justify-center object-cover w-full h-full rounded-full"
+              />
+            </motion.div>
             <div className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] ">
-              <p className="text-[1.1rem]">
+              <p className="text-[1.18rem] text-center">
                 Hi, I'm Vicky Gupta. I'm a self-taught, passionate full-stack
                 web developer from Delhi, 🇮🇳India. I'm currently a B.Tech
                 student in Computer Engineering at Jamia Millia Islamia.
               </p>
-              <p className="text-[1.1rem]">
-                I enjoy the challenges of competitive programming, which has
-                sharpened my critical thinking and coding skills. These
-                experiences have enabled me to tackle complex tasks with
-                confidence.
-              </p>
             </div>
-            <div className="  absolute md:static -bottom-[12rem] md:mt-8 text-[color:var(--primary-text-color)]  flex gap-2 flex-col w-3/5 min-w-[22rem]">
+
+            {/* Coding Profiles */}
+            <div className="absolute md:static -bottom-[12rem] md:mt-8 text-[color:var(--primary-text-color)]  flex gap-2 flex-col w-2/5 min-w-[22rem]">
               <div className="flex flex-col items-center justify-center px-8 mb-4 header">
                 <h1 className="flex gap-2 mb-2 text-3xl font-bold text-center text-white">
-                  CODING PROFILES <FaCode className="text-4xl"/>
+                  CODING PROFILES <FaCode className="text-4xl" />
                 </h1>
                 <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
               </div>
-              <div className="flex items-center justify-around w-full gap-12 px-6 py-6 bg-white rounded-lg shadow-lg shadow-gray-300 md:shadow-cyan-500">
+              <div className="flex items-center w-full gap-12 px-6 py-6 bg-white rounded-md shadow-lg justify-evenly shadow-gray-300 md:shadow-cyan-500">
                 {CODING_PROFILES.map((profile) => {
                   return (
                     <div
@@ -63,9 +83,11 @@ function About() {
                 })}
               </div>
             </div>
+
+            {/* Education */}
             <div className="flex flex-col items-center justify-center px-8 mt-8 mb-4 header">
               <h1 className="flex gap-2 mb-2 text-3xl font-bold text-center text-white">
-                EDUCATION <MdSchool className="text-4xl"/>
+                EDUCATION <MdSchool className="text-4xl" />
               </h1>
               <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
             </div>

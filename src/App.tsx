@@ -16,7 +16,6 @@ function App() {
       <About />
       <Skill />
       <Projects />
-      <Bubbles yStart={200} yEnd={-2500}  />
     </div>
   );
 }

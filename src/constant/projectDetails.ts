@@ -1,6 +1,6 @@
 import PROJECT_IMAGE from "../assets/projects/index";
 
-const PROJECTS:IProjectInfo[] = [
+const PROJECTS: IProjectInfo[] = [
   {
     id: 1,
     name: "Code Verse",
@@ -68,6 +68,125 @@ const PROJECTS:IProjectInfo[] = [
     techStack: ["Javascript", "Html", "Tailwind css"],
     githubLink: "https://github.com/vickyguptaa7/WhiteBoard",
     liveLink: "https://vickyguptaa7.github.io/WhiteBoard/",
+  },
+];
+
+const SMALL_PROJECTS = [
+  {
+    id: 1,
+    name: "Clock App",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.clock_light,
+      dark: PROJECT_IMAGE.clock_dark,
+    },
+    liveLink: "https://vickyguptaa7.github.io/Clock/",
+    githubLink: "https://github.com/vickyguptaa7/Clock",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 2,
+    name: "Calculator App",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.calculator,
+      dark: PROJECT_IMAGE.calculator,
+    },
+    liveLink: "https://vickyguptaa7.github.io/Calculator/",
+    githubLink: "https://github.com/vickyguptaa7/Calculator",
+    techStack: ["Javascript", "Html", "Css"],
+  },
+  {
+    id: 3,
+    name: "Quote Generator",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.quote,
+      dark: PROJECT_IMAGE.quote,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Learning-Projects/1.Quote%20Generator/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Learning-Projects/tree/master/1.Quote%20Generator",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 4,
+    name: "Music Player",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.music,
+      dark: PROJECT_IMAGE.music,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Learning-Projects/6.Audio%20Player/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Learning-Projects/tree/master/6.Audio%20Player",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 5,
+    name: "SlideShow",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.slideshow,
+      dark: PROJECT_IMAGE.slideshow,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Mini-Projects/15.Background%20Slider/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Mini-Projects/tree/master/15.Background%20Slider",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 6,
+    name: "Joke Teller",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.joke,
+      dark: PROJECT_IMAGE.joke,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Learning-Projects/4.Joke%20Teller/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Learning-Projects/tree/master/4.Joke%20Teller",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 7,
+    name: "Skeleton Loader",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.skeleton,
+      dark: PROJECT_IMAGE.skeleton,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Mini-Projects/18.Skeleton%20Loader/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Mini-Projects/tree/master/18.Skeleton%20Loader",
+    techStack: ["Javascript", "Html", "TailwindCss"],
+  },
+  {
+    id: 8,
+    name: "Progress Steps",
+    icon: "",
+    description: "",
+    imgUrl: {
+      light: PROJECT_IMAGE.progress,
+      dark: PROJECT_IMAGE.progress,
+    },
+    liveLink:
+      "https://vickyguptaa7.github.io/Mini-Projects/2.Progress_Steps/dist/index.html",
+    githubLink:
+      "https://github.com/vickyguptaa7/Mini-Projects/tree/master/2.Progress_Steps",
+    techStack: ["Javascript", "Html", "TailwindCss"],
   },
 ];
 
