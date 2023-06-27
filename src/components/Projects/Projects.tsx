@@ -5,7 +5,7 @@ import PROJECTS from "../../constant/projectDetails";
 
 function Projects() {
   return (
-    <section className="mb-12 mt-36 ">
+    <section className="pt-24 mb-12" id="projects">
       <Wrapper>
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center">

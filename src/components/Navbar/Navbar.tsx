@@ -50,8 +50,9 @@ function Navbar() {
                 <span className="invisible group-hover:visible">&gt;</span>
               </Link>
               <Link
-                to="/"
+                to="/#projects"
                 className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
+                onClick={() => scrollToSection("projects")}
               >
                 <span className="invisible group-hover:visible">&lt;</span>
                 PROJECTS
@@ -95,7 +96,7 @@ function Navbar() {
                 HOME
               </Link>
               <Link
-                to="/"
+                to="/#about"
                 className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
                 onClick={() => {
                   setToggle(!toggle);
@@ -105,16 +106,21 @@ function Navbar() {
                 ABOUT
               </Link>
               <Link
-                to="/"
+                to="/#projects"
                 className="py-6 w-full flex justify-end px-2 hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => {
+                  setToggle(!toggle);
+                  scrollToSection("projects");
+                }}
               >
                 PROJECTS
               </Link>
               <Link
                 to="/"
                 className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => setToggle(!toggle)}
+                onClick={() => {
+                  setToggle(!toggle);
+                }}
               >
                 CONTACT
               </Link>
