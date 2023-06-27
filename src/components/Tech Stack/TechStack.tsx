@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 
 import TECH_STACK from "../../constant/techStackDetails";
 import "../../styles.css";
+import Tooltip from "../UI/Tooltip";
 
 function Skill() {
   const [currentStackType, setCurrentStackType] = useState(TECH_STACK[0].name);
@@ -70,7 +71,7 @@ function Skill() {
                     <motion.div
                       key={item.id}
                       className={twMerge(
-                        "flex items-center justify-center w-12 h-12 ",
+                        "flex items-center justify-center w-12 h-12 relative group",
                         item.className
                       )}
                       title={item.name}
@@ -91,6 +92,7 @@ function Skill() {
                         className="object-cover duration-1000 hover:scale-125 hover:duration-500 "
                         alt=""
                       />
+                      <Tooltip className="-top-[52px] " tooltipClassName="border-b-0 border-t-[16px] top-[100%]" title={item.name} />
                     </motion.div>
                   );
                 })}

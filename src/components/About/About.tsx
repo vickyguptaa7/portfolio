@@ -33,14 +33,14 @@ function About() {
                 confidence.
               </p>
             </div>
-            <div className="  absolute md:static -bottom-[13rem] md:mt-8 text-[color:var(--primary-text-color)]  flex gap-2 flex-col w-3/5 min-w-[22rem]">
+            <div className="  absolute md:static -bottom-[12rem] md:mt-8 text-[color:var(--primary-text-color)]  flex gap-2 flex-col w-3/5 min-w-[22rem]">
               <div className="flex flex-col items-center justify-center px-8 mb-4 header">
                 <h1 className="flex gap-2 mb-2 text-3xl font-bold text-center text-white">
                   CODING PROFILES <FaCode className="text-4xl"/>
                 </h1>
                 <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
               </div>
-              <div className="flex items-center justify-around w-full gap-12 px-6 py-6 bg-white rounded-lg shadow-lg shadow-cyan-500">
+              <div className="flex items-center justify-around w-full gap-12 px-6 py-6 bg-white rounded-lg shadow-lg shadow-gray-300 md:shadow-cyan-500">
                 {CODING_PROFILES.map((profile) => {
                   return (
                     <div
