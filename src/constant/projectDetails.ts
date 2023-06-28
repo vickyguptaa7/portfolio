@@ -75,7 +75,7 @@ const SMALL_PROJECTS = [
   {
     id: 1,
     name: "Clock App",
-    icon: "",
+    icon: PROJECT_IMAGE.clock_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.clock_light,
@@ -88,7 +88,7 @@ const SMALL_PROJECTS = [
   {
     id: 2,
     name: "Calculator App",
-    icon: "",
+    icon: PROJECT_IMAGE.calculator_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.calculator,
@@ -101,7 +101,7 @@ const SMALL_PROJECTS = [
   {
     id: 3,
     name: "Quote Generator",
-    icon: "",
+    icon: PROJECT_IMAGE.quote_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.quote,
@@ -116,7 +116,7 @@ const SMALL_PROJECTS = [
   {
     id: 4,
     name: "Music Player",
-    icon: "",
+    icon: PROJECT_IMAGE.music_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.music,
@@ -131,7 +131,7 @@ const SMALL_PROJECTS = [
   {
     id: 5,
     name: "SlideShow",
-    icon: "",
+    icon: PROJECT_IMAGE.slideshow_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.slideshow,
@@ -146,7 +146,7 @@ const SMALL_PROJECTS = [
   {
     id: 6,
     name: "Joke Teller",
-    icon: "",
+    icon: PROJECT_IMAGE.joke_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.joke,
@@ -161,7 +161,7 @@ const SMALL_PROJECTS = [
   {
     id: 7,
     name: "Skeleton Loader",
-    icon: "",
+    icon: PROJECT_IMAGE.skeleton_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.skeleton,
@@ -176,7 +176,7 @@ const SMALL_PROJECTS = [
   {
     id: 8,
     name: "Progress Steps",
-    icon: "",
+    icon: PROJECT_IMAGE.progress_icon,
     description: "",
     imgUrl: {
       light: PROJECT_IMAGE.progress,
@@ -190,4 +190,4 @@ const SMALL_PROJECTS = [
   },
 ];
 
-export default PROJECTS;
+export { PROJECTS, SMALL_PROJECTS };

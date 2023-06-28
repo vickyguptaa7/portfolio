@@ -20,9 +20,9 @@ const Bubbles: React.FC<IPROPS> = ({ yStart, yEnd }) => {
             >
               <motion.span
                 key={indx}
-                className="shadow-bubble-blue bg-[color:var(--color-primary)] h-1.5 aspect-square rounded-full -z-30 "
+                className="shadow-bubble-blue bg-[color:var(--color-primary)] h-1 aspect-square rounded-full -z-30 "
                 initial={{
-                  scale: 0.1,
+                  scale: 0.4,
                   translateY: yStart,
                 }}
                 animate={{
@@ -40,9 +40,9 @@ const Bubbles: React.FC<IPROPS> = ({ yStart, yEnd }) => {
               ></motion.span>
               <motion.span
                 key={indx}
-                className="shadow-bubble-pink bg-[color:var(--color-secondary)] h-1.5 aspect-square rounded-full -z-30 "
+                className="shadow-bubble-pink bg-[color:var(--color-secondary)] h-1 aspect-square rounded-full -z-30 "
                 initial={{
-                  scale: 0.1,
+                  scale: 0.4,
                   translateY: yStart,
                 }}
                 animate={{

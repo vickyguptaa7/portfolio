@@ -1,6 +1,6 @@
 function Achievements() {
   return (
-    <div>Achievements</div>
+    null
   )
 }
 
