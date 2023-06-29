@@ -15,7 +15,7 @@ function About() {
   return (
     <section id="about" className="pt-24">
       <div className="flex flex-col items-center justify-center px-8 header">
-        <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center">
+        <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
           ABOUT ME
         </h1>
         <div className="h-[0.30rem] w-10 bg-[color:var(--color-primary)] rounded-full"></div>
@@ -55,7 +55,7 @@ function About() {
             {/* Coding Profiles */}
             <div className="absolute md:static -bottom-[12rem] md:mt-8 text-[color:var(--primary-text-color)]  flex gap-2 flex-col w-2/5 min-w-[22rem]">
               <div className="flex flex-col items-center justify-center px-8 mb-4 header">
-                <h1 className="flex gap-2 mb-2 text-3xl font-bold text-center text-white">
+                <h1 className="flex gap-2 mb-2 text-3xl font-bold tracking-wide text-center text-white">
                   CODING PROFILES <FaCode className="text-4xl" />
                 </h1>
                 <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
@@ -86,7 +86,7 @@ function About() {
 
             {/* Education */}
             <div className="flex flex-col items-center justify-center px-8 mt-8 mb-4 header">
-              <h1 className="flex gap-2 mb-2 text-3xl font-bold text-center text-white">
+              <h1 className="flex gap-2 mb-2 text-3xl font-bold tracking-wide text-center text-white">
                 EDUCATION <MdSchool className="text-4xl" />
               </h1>
               <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>

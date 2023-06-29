@@ -1,7 +1,6 @@
-
 import "./App.css";
 import About from "./components/About/About";
-import Bubbles from "./components/Bubbles/Bubbles";
+import Achievements from "./components/Achievement/Achievements";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -12,10 +11,10 @@ function App() {
     <div className="min-w-[360px] overflow-hidden">
       <Navbar />
       <Home />
-      <Bubbles yStart={200} yEnd={-1100}  />
       <About />
       <Skill />
       <Projects />
+      <Achievements />
     </div>
   );
 }

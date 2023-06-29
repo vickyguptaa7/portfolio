@@ -13,7 +13,7 @@ function Projects() {
     <section className="pt-24 " id="projects">
       <Wrapper>
         <div className="flex flex-col items-center justify-center px-8 header">
-          <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center">
+          <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
             PROJECTS
           </h1>
           <div className="h-[0.30rem] w-10 bg-[color:var(--color-primary)] rounded-full"></div>
@@ -31,7 +31,7 @@ function Projects() {
             if (!isShownAll && index > 2) return null;
             return (
               <div
-                className="relative bg-white shadow-md h-56 duraion-1000 w-80 group hover:-translate-y-3 hover:duration-500 rounded-xl shadow-cyan-500 hover:h-[244px] hover:pt-16 "
+                className="relative flex items-center justify-center h-56 pb-1 bg-white shadow-md duraion-1000 w-80 group hover:-translate-y-3 hover:duration-500 rounded-xl shadow-cyan-500 hover:pt-16"
                 key={project.id}
               >
                 <img
@@ -72,7 +72,10 @@ function Projects() {
             );
           })}
         </Wrapper>
-        <button className="px-6 py-2 mt-12 bg-white text-[color:var(--primary-text-color)] font-[550] shadow-md shadow-cyan-500" onClick={() => setIsShownAll((prev) => !prev)}>
+        <button
+          className="px-6 py-2 mt-12 bg-white text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-cyan-500 hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
+          onClick={() => setIsShownAll((prev) => !prev)}
+        >
           {isShownAll ? "SHOW LESS" : "SHOW MORE"}
         </button>
         <div className="absolute -top-20 w-[110%] -z-10 -translate-x-5 h-56 bg-[--color-primary] rotate-3 mt-6"></div>
