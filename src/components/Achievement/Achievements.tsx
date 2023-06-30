@@ -79,7 +79,7 @@ function Achievements() {
                         className="px-6 py-2 mt-4 text-white bg-[color:var(--primary-text-color)] font-semibold shadow-md hover:scale-105 duration-1000 hover:duration-300 active:scale-95"
                         onClick={() => window.open(achieve.link, "_blank")}
                       >
-                        View
+                        VIEW
                       </button>
                     </div>
                   </VerticalTimelineElement>

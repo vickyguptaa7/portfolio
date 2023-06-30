@@ -4,6 +4,8 @@ import myImg from "../../assets/myimg.png";
 import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
+import CONTACTS from "../../constant/contact";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -72,26 +74,21 @@ function Home() {
               &lt;button&gt;
             </p>
             <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
-              Download Resume
+              SEE MY RESUME
             </button>
-            <div className="flex items-center gap-4 justify-center mt-3 mx-9 text-[color:var(--tertiary-text-color)]">
-              <button
-                className="duration-300 hover:scale-110 hover:translate-x-2 text-[color:var(--tertiary-text-color)]"
-                onClick={() => {
-                  window.open("https://github.com/vickyguptaa7");
-                }}
-              >
-                <BsGithub className="text-2xl" />
-              </button>
-              <button
-                className="duration-300 hover:scale-110 hover:translate-x-2 text-[color:var(--primary-text-color)]"
-                onClick={() => {
-                  window.open("https://www.linkedin.com/in/vickyguptaa7/");
-                }}
-              >
-                <BsLinkedin className="text-2xl" />
-              </button>
-            </div>
+            <div className="flex gap-4 mt-2 mx-9">
+            {CONTACTS.map((contact) => {
+              return (
+                <Link
+                  key={contact.id}
+                  to={contact.link}
+                  className="p-1.5 rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 hover:translate-x-2"
+                >
+                  <img src={contact.icon} className="w-7" alt="" />
+                </Link>
+              );
+            })}
+          </div>
             <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;/button&gt;
             </p>
