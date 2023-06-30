@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
 import Skill from "./components/Tech Stack/TechStack";
 import ModeSwitcher from "./components/UI/ModeSwitcher";
+import ScrollUp from "./components/UI/ScrollUp";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
         <Skill />
         <Projects />
         <Achievements />
-        <Contact/>
+        <Contact />
       </main>
       <ModeSwitcher />
+      <ScrollUp />
       <Footer />
     </>
   );

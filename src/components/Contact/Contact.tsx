@@ -54,9 +54,9 @@ const Contact = () => {
           {/* <div className="absolute -bottom-16 w-[110%] -z-10 -translate-x-5 h-56 bg-[--color-primary] rotate-3"></div> */}
         </div>
       </section>
+        <div className="h-[2rem] w-full  bg-white rounded-full"></div>
       <footer className="flex items-center flex-col gap-4 justify-center w-full py-4 bg-[color:var(--color-primary)] text-white font-semibold text-lg tracking-wider">
         <Wrapper className="flex flex-col items-center justify-center gap-4">
-        <div className="h-[0.2rem] w-full  bg-white rounded-full"></div>
         <p className="text-center">
         Copyright © Vicky Gupta 2023 All Right Reserved.
         </p>

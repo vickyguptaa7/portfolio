@@ -66,24 +66,25 @@ function Skill() {
           >
             <div className="relative w-full h-[500px] flex flex-col font-semibold text-gray-300 items-center justify-center">
               <div className="flex flex-wrap items-center justify-center w-full gap-12 sm:justify-around">
-                {techStack?.list.map((item) => {
+                {techStack?.list.map((item, index) => {
                   return (
                     <motion.div
                       key={item.id}
                       className={twMerge(
-                        "flex items-center justify-center w-12 h-12 relative group",
+                        "flex items-center justify-center  w-16 h-16 relative group",
                         item.className
                       )}
                       title={item.name}
                       initial={{
-                        translateY: 8 + Math.random() * 8,
+                        translateY: 20,
                       }}
                       animate={{
-                        translateY: -(8 + Math.random() * 8),
+                        translateY: 0,
                         transition: {
                           repeat: Infinity,
                           repeatType: "mirror",
                           duration: 2,
+                          delay: index,
                         },
                       }}
                     >
@@ -92,7 +93,11 @@ function Skill() {
                         className="object-cover duration-1000 hover:scale-125 hover:duration-500 "
                         alt=""
                       />
-                      <Tooltip className="-top-[52px] " tooltipClassName="border-b-0 border-t-[16px] top-[100%]" title={item.name} />
+                      <Tooltip
+                        className="-top-[52px] "
+                        tooltipClassName="border-b-0 border-t-[16px] top-[100%]"
+                        title={item.name}
+                      />
                     </motion.div>
                   );
                 })}
