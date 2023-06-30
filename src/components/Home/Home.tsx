@@ -1,11 +1,10 @@
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import TypewriterComponent from "typewriter-effect";
 import myImg from "../../assets/myimg.png";
+import CONTACTS from "../../constant/contact";
 import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
-import CONTACTS from "../../constant/contact";
-import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -13,7 +12,7 @@ function Home() {
       <Wrapper>
         <section
           id="home"
-          className="relative flex min-h-[580px] items-center justify-between px-4 pt-16 md:pt-8 md:px-8 md:h-screen  md:min-h-[800px]"
+          className="relative flex min-h-[580px] items-center justify-between px-4 pt-32 md:pt-8 md:px-8 md:h-screen  md:min-h-[800px]"
         >
           <div className="flex flex-col items-start justify-center cursor-default ">
             <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
@@ -32,23 +31,19 @@ function Home() {
               </h1>
               <h1 className="mt-2 text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
                 I'm{" "}
-                <span className="text-[color:var(--primary-text-color)] text-4xl  sm:text-5xl font-semibold">
-                  {" "}
-                  Vicky
+                <span className="text-[color:var(--primary-text-color)] text-4xl  sm:text-5xl font-semibold ">
+                  Vicky Gupta
                 </span>
                 ,
-              </h1>
-              <h1 className="mt-2 text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black whitespace-nowrap">
-                a web developer.
               </h1>
             </div>
             <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;/h1&gt;
             </p>
             <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
-              &lt;/p&gt;
+              &lt;/h3&gt;
             </p>
-            <div className="flex max-w-md pt-2 text-2xl font-semibold tracking-wider duration-1000 lg:max-w-lg px-9 hover:translate-x-8 hover:duration-300 hover:scale-105">
+            <div className="flex pt-2 text-3xl font-semibold tracking-wider duration-1000 lg:max-w-lg pl-9 hover:translate-x-8 hover:duration-300 hover:scale-105">
               I'm&nbsp;
               <TypewriterComponent
                 options={{
@@ -61,34 +56,34 @@ function Home() {
                   delay: 100,
                   loop: true,
                   cursorClassName:
-                    " text-2xl text-[color:var(--primary-text-color)] ",
+                    " text-3xl text-[color:var(--primary-text-color)] ",
                   wrapperClassName:
-                    "text-[color:var(--primary-text-color)] text-xl sm:text-2xl font-semibold drop-shadow-lg shadow-black",
+                    "text-[color:var(--primary-text-color)] text-3xl sm:text-3xl font-semibold drop-shadow-lg shadow-black",
                 }}
               />
             </div>
-            <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
-              &lt;/p&gt;
+            <p className="px-6 mt-1.5 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
+              &lt;/h3&gt;
             </p>
-            <p className="px-3 mt-4 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
+            <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;button&gt;
             </p>
             <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
               SEE MY RESUME
             </button>
             <div className="flex gap-4 mt-2 mx-9">
-            {CONTACTS.map((contact) => {
-              return (
-                <Link
-                  key={contact.id}
-                  to={contact.link}
-                  className="p-1.5 rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 hover:translate-x-2"
-                >
-                  <img src={contact.icon} className="w-7" alt="" />
-                </Link>
-              );
-            })}
-          </div>
+              {CONTACTS.map((contact) => {
+                return (
+                  <Link
+                    key={contact.id}
+                    to={contact.link}
+                    className="p-1.5 rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 hover:translate-x-2"
+                  >
+                    <img src={contact.icon} className="w-7" alt="" />
+                  </Link>
+                );
+              })}
+            </div>
             <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;/button&gt;
             </p>
