@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import "./Bubbles.styles.css";
+
 interface IPROPS {
   yStart: number;
   yEnd: number;
@@ -30,6 +30,7 @@ const Bubbles: React.FC<IPROPS> = ({ yStart, yEnd }) => {
                   scale: 1,
                   transition: {
                     repeat: Infinity,
+                    ease:"linear",
                     repeatType: "loop",
                     duration:
                       indx & 1
@@ -51,6 +52,7 @@ const Bubbles: React.FC<IPROPS> = ({ yStart, yEnd }) => {
                   transition: {
                     repeat: Infinity,
                     repeatType: "loop",
+                    ease:"linear",
                     duration:
                       indx & 1
                         ? Math.random() * 10 + 20

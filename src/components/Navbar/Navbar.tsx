@@ -59,8 +59,9 @@ function Navbar() {
                 <span className="invisible group-hover:visible">&gt;</span>
               </Link>
               <Link
-                to="/"
+                to="/#contact"
                 className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
+                onClick={() => scrollToSection("contact")}
               >
                 <span className="invisible group-hover:visible">&lt;</span>
                 CONTACT
@@ -116,10 +117,11 @@ function Navbar() {
                 PROJECTS
               </Link>
               <Link
-                to="/"
+                to="/#contact"
                 className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
                 onClick={() => {
                   setToggle(!toggle);
+                  scrollToSection("contact");
                 }}
               >
                 CONTACT
