@@ -4,11 +4,15 @@ import ProjectCard from "./ProjectCard";
 import { useState } from "react";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import { PROJECTS, SMALL_PROJECTS } from "../../constant/projectDetails";
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Bubbles from "../Bubbles/Bubbles";
 
 function Projects() {
   const [isShownAll, setIsShownAll] = useState(false);
+  const isDarkMode = useRecoilValue(darkModeAtom);
+
   return (
     <section className="pt-24 " id="projects">
       <Wrapper>
@@ -35,7 +39,7 @@ function Projects() {
                 key={project.id}
               >
                 <img
-                  src={project.imgUrl.light}
+                  src={isDarkMode ? project.imgUrl.dark : project.imgUrl.light}
                   className="absolute w-64 duration-700 -translate-x-1/2 rounded-lg shadow-md top-6 group-hover:-top-16 group-hover:duration-500 left-1/2 aspect-video"
                   alt=""
                 />

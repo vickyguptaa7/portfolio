@@ -9,8 +9,11 @@ import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
 import "./achievement.styles.css"
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
+import { useRecoilValue } from "recoil";
 
 function Achievements() {
+  const isDarkMode = useRecoilValue(darkModeAtom);
   return (
     <>
       <Wrapper>
@@ -23,7 +26,7 @@ function Achievements() {
           </div>
           <div className="my-12">
             <VerticalTimeline
-              lineColor="#05cbf7"
+              lineColor={isDarkMode?"#0078e1":"#05cbf7"}
               className="pt-16 "
               animate={true}
             >

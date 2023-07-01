@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
+import { twMerge } from "tailwind-merge";
 import CONTACTS from "../../constant/contact";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Wrapper from "../Wrapper/wrapper";
-import { twMerge } from "tailwind-merge";
 
 const Contact = () => {
-  const darkMode = useRecoilValue(darkModeAtom);
+  const isDarkMode = useRecoilValue(darkModeAtom);
   return (
     <>
       <section id="contact" className="pt-24 ">
@@ -34,11 +34,11 @@ const Contact = () => {
                     >
                       <img
                         src={
-                          darkMode && contact.icon_dark
+                          isDarkMode && contact.icon_dark
                             ? contact.icon_dark
                             : contact.icon
                         }
-                        className={twMerge("w-7",contact.className)}
+                        className={twMerge("w-7", contact.className)}
                         alt=""
                       />
                     </Link>
@@ -57,6 +57,7 @@ const Contact = () => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.02670427057078!2d77.28255034027204!3d28.556929835391184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d2a5c32827%3A0x399703d8db4a8713!2sMariyam%20Residency!5e0!3m2!1sen!2sin!4v1688108537681!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
+                style={{ filter: isDarkMode ? "invert(92%)" : "" }}
                 allowFullScreen={true}
                 loading="lazy"
               ></iframe>

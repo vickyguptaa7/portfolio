@@ -10,7 +10,7 @@ import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
 function Home() {
-  const darkMode = useRecoilValue(darkModeAtom);
+  const isDarkMode = useRecoilValue(darkModeAtom);
   return (
     <>
       <Wrapper>
@@ -85,11 +85,11 @@ function Home() {
                   >
                     <img
                       src={
-                        darkMode && contact.icon_dark
+                        isDarkMode && contact.icon_dark
                           ? contact.icon_dark
                           : contact.icon
                       }
-                      className={twMerge("w-7", darkMode?contact.className:"")}
+                      className={twMerge("w-7", isDarkMode?contact.className:"")}
                       alt=""
                     />
                   </Link>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import { twMerge } from "tailwind-merge";
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 
 interface IPROPS {
   index: number;
@@ -10,6 +12,8 @@ interface IPROPS {
 
 const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
   const [currDescriptionIndx, setCurrDescriptionIndx] = useState(0);
+  const isDarkMode = useRecoilValue(darkModeAtom);
+
   return (
     <div
       className={twMerge(
@@ -30,7 +34,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
         </h2>
         <div
           className={twMerge(
-            "pt-6 md:p-6 md:rounded-lg md:shadow-lg md:bg-[color:var(--secondary-background-color)] text-[color:var(--secondary-text-color)] text-center",
+            "pt-6 md:p-6 md:rounded-lg md:shadow-lg md:bg-[color:var(--secondary-background-color)] text-[color:var(--secondary-text-color)] text-center mt-4",
             index & 1 ? "md:text-right" : "md:text-left"
           )}
         >
@@ -82,8 +86,8 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
         )}
       >
         <img
-          src={project.imgUrl.light}
-          className="object-cover object-top w-full h-full duration-500 border-4 border-white rounded-sm "
+          src={isDarkMode ? project.imgUrl.dark : project.imgUrl.light}
+          className="object-cover object-top w-full h-full duration-500 border-4 border-[color:var(--secondary-background-color)] rounded-sm "
           alt=""
         />
         {/* <div className={twMerge("absolute -top-2 rounded-lg -left-2 w-[calc(100%+30px)] h-[calc(100%+20px)] bg-[#ff2d75] ",index&1?"-rotate-0":"rotate-0")}>
