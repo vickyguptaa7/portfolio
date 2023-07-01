@@ -14,7 +14,7 @@ function Navbar() {
     });
   };
   return (
-    <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-white ">
+    <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-[color:var(--secondary-background-color)] ">
       <Wrapper>
         <section className="flex items-center justify-between w-full">
           <Link

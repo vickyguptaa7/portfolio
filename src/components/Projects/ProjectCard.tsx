@@ -20,7 +20,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
     >
       <div
         className={twMerge(
-          "flex flex-col justify-center basis-1/2 bg-white md:bg-transparent p-6 group-hover:translate-y-4 group-hover:duration-500 md:group-hover:translate-y-0 duration-1000 rounded-lg shadow-lg -mt-5 md:mt-0 md:rounded-none md:shadow-none md:p-0",
+          "flex flex-col justify-center basis-1/2 bg-[color:var(--secondary-background-color)] md:bg-transparent p-6 group-hover:translate-y-4 group-hover:duration-500 md:group-hover:translate-y-0 duration-1000 rounded-lg shadow-lg -mt-5 md:mt-0 md:rounded-none md:shadow-none md:p-0",
           index & 1 ? "md:items-end" : "md:items-start"
         )}
       >
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
         </h2>
         <div
           className={twMerge(
-            "pt-6 md:p-6 md:rounded-lg md:shadow-lg md:bg-white text-[color:var(--secondary-text-color)] text-center",
+            "pt-6 md:p-6 md:rounded-lg md:shadow-lg md:bg-[color:var(--secondary-background-color)] text-[color:var(--secondary-text-color)] text-center",
             index & 1 ? "md:text-right" : "md:text-left"
           )}
         >
@@ -75,7 +75,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
       </div>
       <div
         className={twMerge(
-          "relative basis-1/2 aspect-video shadow-md rounded-lg  -z-10 group-hover:-translate-y-4 group-hover:duration-1000 md:group-hover:-translate-y-0 duration-1000",
+          "relative basis-1/2 aspect-video shadow-md rounded-sm  -z-10 group-hover:-translate-y-4 group-hover:duration-1000 md:group-hover:-translate-y-0 duration-1000",
           index & 1
             ? " md:-mr-28 md:group-hover:-translate-x-10"
             : "md:-ml-28 md:group-hover:translate-x-10"
@@ -83,7 +83,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
       >
         <img
           src={project.imgUrl.light}
-          className="object-cover object-top w-full h-full duration-500 border-4 border-white rounded-lg "
+          className="object-cover object-top w-full h-full duration-500 border-4 border-white rounded-sm "
           alt=""
         />
         {/* <div className={twMerge("absolute -top-2 rounded-lg -left-2 w-[calc(100%+30px)] h-[calc(100%+20px)] bg-[#ff2d75] ",index&1?"-rotate-0":"rotate-0")}>

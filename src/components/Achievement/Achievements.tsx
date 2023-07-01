@@ -30,9 +30,9 @@ function Achievements() {
                   <VerticalTimelineElement
                     key={achieve.id}
                     className="mb-20 vertical-timeline-element--work"
-                    iconClassName="shadow-md shadow-gray-300 "
+                    iconClassName="shadow-md shadow-[color:var(--secondary-shadow-color)] "
                     icon={
-                      <div className="flex items-center justify-center w-full h-full bg-white rounded-full ">
+                      <div className="flex items-center justify-center w-full h-full bg-[color:var(--secondary-background-color)] rounded-full ">
                         <img
                           src={achieve.icon}
                           className="object-center w-6 lgm:w-8 aspect-square"

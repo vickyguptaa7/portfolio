@@ -31,7 +31,7 @@ function Projects() {
             if (!isShownAll && index > 2) return null;
             return (
               <div
-                className="relative flex items-center justify-center h-56 pb-1 bg-white shadow-md duraion-1000 w-80 group hover:-translate-y-3 hover:duration-500 rounded-xl shadow-cyan-500 hover:pt-16"
+                className="relative flex items-center justify-center h-56 pb-1 bg-[color:var(--secondary-background-color)] shadow-md duraion-1000 w-80 group hover:-translate-y-3 hover:duration-500 rounded-xl shadow-[color:var(--primary-shadow-color)] hover:pt-16"
                 key={project.id}
               >
                 <img
@@ -73,7 +73,7 @@ function Projects() {
           })}
         </Wrapper>
         <button
-          className="px-6 py-2 mt-12 bg-white text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-cyan-500 hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
+          className="px-6 py-2 mt-12 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
           onClick={() => setIsShownAll((prev) => !prev)}
         >
           {isShownAll ? "SHOW LESS" : "SHOW MORE"}

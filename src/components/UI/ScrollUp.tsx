@@ -22,7 +22,7 @@ const ScrollUp = () => {
   if (!isVisible) return null;
 
   return (
-    <div className=" fixed bottom-12 right-4  bg-white shadow-lg w-[48px] sm:w-[56px] aspect-square rounded-full flex justify-center items-center">
+    <div className=" fixed bottom-12 right-4  bg-[color:var(--secondary-background-color)] shadow-lg w-[48px] sm:w-[56px] aspect-square rounded-full flex justify-center items-center">
       <button className={twMerge("p-2 text-white ")} onClick={scrollToTop}>
         <FaArrowUp className="text-2xl text-[color:var(--primary-text-color)]" />
       </button>

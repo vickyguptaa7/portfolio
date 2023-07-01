@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --color-primary: #05cbf7;
-  --color-primary-low: #02a0c4f3;
   --color-secondary: #ff2d75;
   --primary-text-color: #05cbf7;
   --secondary-text-color: #6a7280;
   --tertiary-text-color: #141f1d;
-  --background-color: #e3e6ea;
-  --main-color: #fff;
-  --shadow-color: #d1d5db;
+  --primary-background-color: #fff;
+  --secondary-background-color: #ffffff;
+  --primary-shadow-color: #06b6d4;
+  --secondary-shadow-color: #d4d4d8;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
 }
 
@@ -29,7 +29,8 @@
   }
 }
 
-html,body {
+html,
+body {
   -webkit-tap-highlight-color: transparent;
   width: 100vw;
 }

@@ -26,7 +26,7 @@ const Contact = () => {
                     <Link
                       key={contact.id}
                       to={contact.link}
-                      className="p-1.5 bg-white rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 shadow-cyan-500 shadow-sm"
+                      className="p-1.5 bg-[color:var(--secondary-background-color)] rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 shadow-[color:var(--primary-shadow-color)] shadow-sm"
                     >
                       <img src={contact.icon} className="w-7" alt="" />
                     </Link>
@@ -34,13 +34,13 @@ const Contact = () => {
                 })}
               </div>
               <button
-                className="px-8 py-3 mt-2 bg-white text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-cyan-500 hover:scale-110 duration-1000 hover:duration-300 active:scale-95 tracking-wide"
+                className="px-8 py-3 mt-2 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95 tracking-wide"
                 onClick={() => window.open("mailto:vickyguptaa7@gmail.com")}
               >
                 SEE MY RESUME
               </button>
             </div>
-            <div className="w-full sm:w-4/5 lg:w-full mt-8 border-8 border-white shadow-lg shadow-cyan-500 h-[300px] lg:mt-0 lg:h-[400px] flex items-center justify-center bg-white">
+            <div className="w-full sm:w-4/5 lg:w-full mt-8 border-8 border-white shadow-lg shadow-[color:var(--primary-shadow-color)] h-[300px] lg:mt-0 lg:h-[400px] flex items-center justify-center bg-[color:var(--secondary-background-color)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.02670427057078!2d77.28255034027204!3d28.556929835391184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d2a5c32827%3A0x399703d8db4a8713!2sMariyam%20Residency!5e0!3m2!1sen!2sin!4v1688108537681!5m2!1sen!2sin"
                 width="100%"
@@ -54,12 +54,12 @@ const Contact = () => {
           {/* <div className="absolute -bottom-16 w-[110%] -z-10 -translate-x-5 h-56 bg-[--color-primary] rotate-3"></div> */}
         </div>
       </section>
-        <div className="h-[2rem] w-full  bg-white rounded-full"></div>
+      <div className="h-[2rem] w-full  bg-[color:var(--secondary-background-color)] rounded-full"></div>
       <footer className="flex items-center flex-col gap-4 justify-center w-full py-4 bg-[color:var(--color-primary)] text-white font-semibold text-lg tracking-wider">
         <Wrapper className="flex flex-col items-center justify-center gap-4">
-        <p className="text-center">
-        Copyright © Vicky Gupta 2023 All Right Reserved.
-        </p>
+          <p className="text-center">
+            Copyright © Vicky Gupta 2023 All Right Reserved.
+          </p>
         </Wrapper>
       </footer>
     </>
