@@ -17,7 +17,7 @@ function Achievements() {
   return (
     <>
       <Wrapper>
-        <section id="achievement" className="pt-20">
+        <section data-section id="achievement" className="pt-20">
           <div className="flex flex-col items-center justify-center px-8 header">
             <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
               ACHIEVEMENTS

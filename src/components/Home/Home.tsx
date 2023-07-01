@@ -15,6 +15,7 @@ function Home() {
     <>
       <Wrapper>
         <section
+          data-section
           id="home"
           className="relative flex min-h-[580px] items-center justify-between px-4 pt-32 md:pt-8 md:px-8 md:h-screen  md:min-h-[800px]"
         >
@@ -89,7 +90,10 @@ function Home() {
                           ? contact.icon_dark
                           : contact.icon
                       }
-                      className={twMerge("w-7", isDarkMode?contact.className:"")}
+                      className={twMerge(
+                        "w-7",
+                        isDarkMode ? contact.className : ""
+                      )}
                       alt=""
                     />
                   </Link>

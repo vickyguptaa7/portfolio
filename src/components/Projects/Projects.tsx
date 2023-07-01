@@ -14,7 +14,7 @@ function Projects() {
   const isDarkMode = useRecoilValue(darkModeAtom);
 
   return (
-    <section className="pt-24 " id="projects">
+    <section data-section className="pt-24 " id="projects">
       <Wrapper>
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">

@@ -9,7 +9,7 @@ const Contact = () => {
   const isDarkMode = useRecoilValue(darkModeAtom);
   return (
     <>
-      <section id="contact" className="pt-24 ">
+      <section data-section id="contact" className="pt-24 ">
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
             GET IN TOUCH

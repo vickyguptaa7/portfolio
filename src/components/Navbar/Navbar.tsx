@@ -1,9 +1,40 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import Wrapper from "../Wrapper/wrapper";
 
 function Navbar() {
+  const [activeSection, setActiveSection] = useState<string>("");
+  const sections = useRef<NodeListOf<HTMLElement>>();
+  console.log(activeSection);
+  const handleScroll = () => {
+    const pageYOffset = window.pageYOffset;;
+    
+    let newActiveSection = "";
+
+    sections.current?.forEach((section) => {
+      const sectionOffsetTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        pageYOffset >= sectionOffsetTop &&
+        pageYOffset < sectionOffsetTop + sectionHeight
+      ) {
+        newActiveSection = section.id;
+      }
+    });
+    setActiveSection(newActiveSection);
+  };
+
+  useEffect(() => {
+    sections.current = document.querySelectorAll("[data-section]");
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const [toggle, setToggle] = useState(false);
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
