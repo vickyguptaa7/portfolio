@@ -23,7 +23,7 @@ function Skill() {
         </div>
         <div className="relative p-6 mt-8 font-medium text-black rounded-full">
           {/* <div className="absolute top-1 left-1 -z-10 w-full h-full bg-[color:var(--color-primary)] rounded-full"></div> */}
-          <div className="z-10 flex flex-wrap items-center justify-around gap-4 font-semibold">
+          <div className="z-10 flex flex-wrap items-center justify-around gap-4 font-semibold text-[color:var(--tertiary-text-color)]">
             {TECH_STACK.map((item) => {
               return (
                 <button

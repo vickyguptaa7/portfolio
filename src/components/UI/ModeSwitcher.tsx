@@ -6,14 +6,19 @@ import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 
 const ModeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useRecoilState(darkModeAtom);
+  const modeSwitcherHandler = () => {
+    if (!isDarkMode) document.body.classList.add("dark-mode");
+    else document.body.classList.remove("dark-mode");
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <div className="button fixed bottom-12 bg-[color:var(--color-primary)] shadow-lg w-12 md:w-16 h-10 rounded-r-full flex justify-end items-center">
       <button
         className={twMerge(
-          "p-2 text-white ",
-          isDarkMode ? "hover:text-white" : "hover:text-black"
+          "p-2 ",
+          isDarkMode ? "text-black hover:text-white" : "text-white hover:text-black"
         )}
-        onClick={() => setIsDarkMode(!isDarkMode)}
+        onClick={modeSwitcherHandler}
       >
         {isDarkMode && <MdDarkMode className="text-2xl " />}
         {!isDarkMode && <RiSunFill className="text-2xl " />}

@@ -18,7 +18,7 @@ function About() {
           <div className="relative flex flex-col items-center justify-center gap-4">
             {/* About Me */}
             <motion.div
-              className="bg-[color:var(--secondary-background-color)] border-4 border-white rounded-full w-36 aspect-square"
+              className="bg-[color:var(--secondary-background-color)] border-4 border-[color:var(--secondary-background-color)] rounded-full w-36 aspect-square"
               initial={{
                 translateY: 8,
               }}

@@ -1,6 +1,7 @@
 import About from "./components/About/About";
 import Achievements from "./components/Achievement/Achievements";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -20,6 +21,7 @@ function App() {
         <Achievements />
         <Contact />
       </main>
+      <Footer />
       <ModeSwitcher />
       <ScrollUp />
     </>

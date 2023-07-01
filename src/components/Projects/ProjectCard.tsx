@@ -24,7 +24,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
           index & 1 ? "md:items-end" : "md:items-start"
         )}
       >
-        <h2 className="text-2xl font-[550] whitespace-nowrap flex items-center justify-center">
+        <h2 className="text-2xl font-[550] whitespace-nowrap flex items-center justify-center text-[color:var(--tertiary-text-color)] ">
           <img src={project.icon} className="w-12 aspect-square" alt="" />
           {project.name}
         </h2>
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
             );
           })}
         </ul>
-        <div className="flex items-center justify-center gap-4 mt-4">
+        <div className="flex items-center justify-center gap-4 mt-4 text-[color:var(--secondary-text-color)]">
           <Link to={project.githubLink} target="_blank">
             <LuGithub className="text-xl hover:text-[color:var(--primary-text-color)] hover:scale-125 duration-1000 hover:duration-300" />
           </Link>

@@ -8,6 +8,8 @@ import ACHIVEMENTS from "../../constant/achievements";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
+import "./achievement.styles.css"
+
 function Achievements() {
   return (
     <>

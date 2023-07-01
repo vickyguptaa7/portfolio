@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { twMerge } from "tailwind-merge";
 import TypewriterComponent from "typewriter-effect";
 import myImg from "../../assets/myimg.png";
 import CONTACTS from "../../constant/contact";
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
 function Home() {
+  const darkMode = useRecoilValue(darkModeAtom);
   return (
     <>
       <Wrapper>
@@ -25,11 +29,11 @@ function Home() {
               &lt;h1&gt;
             </p>
             <div className="flex flex-col mt-2 px-9">
-              <h1 className="text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
+              <h1 className="text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black text-[color:var(--tertiary-text-color)]">
                 Hello
                 <br />
               </h1>
-              <h1 className="mt-2 text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
+              <h1 className="mt-2 text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black text-[color:var(--tertiary-text-color)] ">
                 I'm{" "}
                 <span className="text-[color:var(--primary-text-color)] text-4xl  sm:text-5xl font-semibold ">
                   Vicky Gupta
@@ -43,7 +47,7 @@ function Home() {
             <p className="px-6 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;/h3&gt;
             </p>
-            <div className="flex pt-2 text-3xl font-semibold tracking-wider duration-1000 lg:max-w-lg pl-9 hover:translate-x-8 hover:duration-300 hover:scale-105">
+            <div className="flex pt-2 text-3xl font-semibold tracking-wider duration-1000 lg:max-w-lg pl-9 hover:translate-x-8 hover:duration-300 hover:scale-105 text-[color:var(--tertiary-text-color)]">
               I'm&nbsp;
               <TypewriterComponent
                 options={{
@@ -79,7 +83,15 @@ function Home() {
                     to={contact.link}
                     className="p-1.5 rounded-full  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 hover:translate-x-2"
                   >
-                    <img src={contact.icon} className="w-7" alt="" />
+                    <img
+                      src={
+                        darkMode && contact.icon_dark
+                          ? contact.icon_dark
+                          : contact.icon
+                      }
+                      className={twMerge("w-7", darkMode?contact.className:"")}
+                      alt=""
+                    />
                   </Link>
                 );
               })}
@@ -94,8 +106,8 @@ function Home() {
               &lt;/html&gt;
             </p>
           </div>
-          <div className="absolute h-10 w-6 border-2 border-black  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
-            <div className="w-1.5 my-1 bg-black rounded-full aspect-square mouse"></div>
+          <div className="absolute h-10 w-6 border-2 border-[color:var(--tertiary-text-color)]  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
+            <div className="w-1.5 my-1 bg-[color:var(--tertiary-text-color)] rounded-full aspect-square mouse"></div>
           </div>
           <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
             <img
