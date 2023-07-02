@@ -6,6 +6,7 @@ import { ABOUT_ME } from "../../data/about";
 import Education from "../Education/Education";
 
 function About() {
+
   return (
     <section data-section id="about" className="pt-24">
       <div className="flex flex-col items-center justify-center px-8 header">
@@ -39,7 +40,9 @@ function About() {
               />
             </motion.div>
             <div className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] ">
-              <p className="text-[1.18rem] text-center">{ABOUT_ME.description}</p>
+              <p className="text-[1.18rem] text-center">
+                {ABOUT_ME.description}
+              </p>
             </div>
             <Education />
           </div>

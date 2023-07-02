@@ -1,3 +1,6 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { twMerge } from "tailwind-merge";
@@ -9,8 +12,16 @@ import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
+import { motion } from "framer-motion";
+
 function Home() {
   const isDarkMode = useRecoilValue(darkModeAtom);
+  
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <Wrapper>
@@ -19,7 +30,10 @@ function Home() {
           id="home"
           className="relative flex min-h-[580px] items-center justify-between px-4 pt-32 md:pt-8 md:px-8 md:h-screen  md:min-h-[800px]"
         >
-          <div className="flex flex-col items-start justify-center cursor-default ">
+          <div
+            className="flex flex-col items-start justify-center cursor-default "
+            data-aos="fade-down"
+          >
             <p className="text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;html&gt;
             </p>
@@ -110,14 +124,23 @@ function Home() {
               &lt;/html&gt;
             </p>
           </div>
-          <div className="absolute h-10 w-6 border-2 border-[color:var(--tertiary-text-color)]  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
+          <motion.div
+            className="absolute h-10 w-6 border-2 border-[color:var(--tertiary-text-color)]  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center"
+            initial={{ transform: "translateY(-40px)", opacity: 0 }}
+            animate={{
+              transform: "translateY(0px)",
+              opacity: 1,
+              transition: { duration: 1 },
+            }}
+          >
             <div className="w-1.5 my-1 bg-[color:var(--tertiary-text-color)] rounded-full aspect-square mouse"></div>
-          </div>
+          </motion.div>
           <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
             <img
               src={ABOUT_ME.image}
               alt=""
               className="object-cover object-top w-full h-full"
+              data-aos="fade-down"
             />
           </div>
         </section>

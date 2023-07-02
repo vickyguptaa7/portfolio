@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { twMerge } from "tailwind-merge";
 import Wrapper from "../Wrapper/wrapper";
@@ -9,9 +9,18 @@ import TECH_STACK from "../../data/techStackDetails";
 import "../../styles.css";
 import Tooltip from "../UI/Tooltip";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function Skill() {
   const [currentStackType, setCurrentStackType] = useState(TECH_STACK[0].name);
   const techStack = TECH_STACK.find((item) => item.name === currentStackType);
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <section data-section className="mt-64 mb-12" id="tech-stack">
       <Wrapper className="flex flex-col items-center justify-center">
@@ -23,7 +32,7 @@ function Skill() {
         </div>
         <div className="relative p-6 mt-8 font-medium text-black rounded-full">
           {/* <div className="absolute top-1 left-1 -z-10 w-full h-full bg-[color:var(--color-primary)] rounded-full"></div> */}
-          <div className="z-10 flex flex-wrap items-center justify-around gap-4 font-semibold text-[color:var(--tertiary-text-color)]">
+          <div className="z-30 flex flex-wrap items-center justify-around gap-4 font-semibold text-[color:var(--tertiary-text-color)]">
             {TECH_STACK.map((item) => {
               return (
                 <button
@@ -62,13 +71,16 @@ function Skill() {
           <Parallax
             className="w-full mt-8 "
             speed={0.3}
-            translateY={["-100px", "100px"]}
+            translateY={["-60px", "100px"]}
           >
-            <div className="relative w-full h-[500px] flex flex-col font-semibold text-gray-300 items-center justify-center">
+            <div className="relative w-full h-[450px] flex flex-col font-semibold text-gray-300 items-center justify-center">
               <div className="flex flex-wrap items-center justify-center w-full gap-12 sm:justify-around">
                 {techStack?.list.map((item, index) => {
                   return (
                     <motion.div
+                      data-aos="zoom-in-down"
+                      data-aos-duration={300 + index * 150}
+                      data-aos-ease="ease-sine"
                       key={item.id}
                       className={twMerge(
                         "flex items-center justify-center  w-16 h-16 relative group",

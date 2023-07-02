@@ -21,6 +21,7 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
         index & 1 ? "md:flex-row-reverse" : "md:flex-row"
       )}
       key={project.id}
+      data-aos={"fade-" + (index & 1 ? "left" : "right")}
     >
       <div
         className={twMerge(

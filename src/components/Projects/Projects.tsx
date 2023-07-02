@@ -1,7 +1,9 @@
 import Wrapper from "../Wrapper/wrapper";
 import ProjectCard from "./ProjectCard";
 
-import { useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect, useState } from "react";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
@@ -13,8 +15,13 @@ function Projects() {
   const [isShownAll, setIsShownAll] = useState(false);
   const isDarkMode = useRecoilValue(darkModeAtom);
 
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
+
   return (
-    <section data-section className="pt-24 " id="projects">
+    <section data-section className="pt-24" id="projects">
       <Wrapper>
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
@@ -28,7 +35,7 @@ function Projects() {
           })}
         </div>
       </Wrapper>
-      <Bubbles yStart={200} yEnd={-2500} />
+      <Bubbles yStart={200} yEnd={-3000} />
       <div className="w-full bg-[color:var(--color-primary)] relative mt-48 mb-28 pt-16 flex items-center justify-center flex-col ">
         <Wrapper className="flex flex-wrap items-center justify-center gap-24">
           {SMALL_PROJECTS.map((project, index) => {
@@ -37,6 +44,9 @@ function Projects() {
               <div
                 className="relative flex items-center justify-center h-56 pb-1 bg-[color:var(--secondary-background-color)] shadow-md duraion-1000 w-80 group hover:-translate-y-3 hover:duration-500 rounded-xl shadow-[color:var(--primary-shadow-color)] hover:pt-16"
                 key={project.id}
+                data-aos="zoom-in"
+                data-aos-duration={500 + 250 * index}
+                data-aos-easing="ease-sine"
               >
                 <img
                   src={isDarkMode ? project.imgUrl.dark : project.imgUrl.light}
