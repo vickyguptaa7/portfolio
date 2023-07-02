@@ -1,24 +1,52 @@
 import { useEffect, useRef, useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
 import Wrapper from "../Wrapper/wrapper";
 
+const NAVBAR_MENU = [
+  {
+    id: 1,
+    name: "home",
+    to: "/#home",
+  },
+  {
+    id: 2,
+    name: "about",
+    to: "/#about",
+  },
+  {
+    id: 3,
+    name: "projects",
+    to: "/#projects",
+  },
+  {
+    id: 4,
+    name: "contact",
+    to: "/#contact",
+  },
+];
+
 function Navbar() {
-  const [activeSection, setActiveSection] = useState<string>("");
+  const [activeSection, setActiveSection] = useState<string>("home");
   const sections = useRef<NodeListOf<HTMLElement>>();
   console.log(activeSection);
   const handleScroll = () => {
-    const pageYOffset = window.pageYOffset;;
-    
+    const pageYOffset = window.pageYOffset;
+
     let newActiveSection = "";
 
     sections.current?.forEach((section) => {
+      // positionof each sections from top
       const sectionOffsetTop = section.offsetTop;
+
+      // height of each section
       const sectionHeight = section.offsetHeight;
 
+      // 50 subtracted from sectionOffsetTop and sectionHeight to make the active section change a little before the section is reached
       if (
-        pageYOffset >= sectionOffsetTop &&
-        pageYOffset < sectionOffsetTop + sectionHeight
+        pageYOffset >= sectionOffsetTop - 50 &&
+        pageYOffset < sectionOffsetTop + sectionHeight - 50
       ) {
         newActiveSection = section.id;
       }
@@ -36,6 +64,7 @@ function Navbar() {
   }, []);
 
   const [toggle, setToggle] = useState(false);
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     section?.scrollIntoView({
@@ -44,6 +73,7 @@ function Navbar() {
       inline: "end",
     });
   };
+
   return (
     <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-[color:var(--secondary-background-color)] ">
       <Wrapper>
@@ -62,42 +92,39 @@ function Navbar() {
           {/* For Screens greater than 640px */}
           <div className="hidden sm:flex">
             <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
-              <Link
-                to="#home"
-                className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group "
-                onClick={() => scrollToSection("home")}
-              >
-                <span className="invisible group-hover:visible">&lt;</span>
-                HOME
-                <span className="invisible group-hover:visible">&gt;</span>
-              </Link>
-              <Link
-                to="#about"
-                className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
-                onClick={() => scrollToSection("about")}
-              >
-                <span className="invisible group-hover:visible">&lt;</span>
-                ABOUT
-                <span className="invisible group-hover:visible">&gt;</span>
-              </Link>
-              <Link
-                to="/#projects"
-                className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
-                onClick={() => scrollToSection("projects")}
-              >
-                <span className="invisible group-hover:visible">&lt;</span>
-                PROJECTS
-                <span className="invisible group-hover:visible">&gt;</span>
-              </Link>
-              <Link
-                to="/#contact"
-                className="py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group"
-                onClick={() => scrollToSection("contact")}
-              >
-                <span className="invisible group-hover:visible">&lt;</span>
-                CONTACT
-                <span className="invisible group-hover:visible">&gt;</span>
-              </Link>
+              {NAVBAR_MENU.map((menu) => {
+                return (
+                  <Link
+                    key={menu.id}
+                    to={menu.to}
+                    className={twMerge(
+                      "py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group ",
+                      activeSection === menu.name
+                        ? "text-[color:var(--primary-text-color)]"
+                        : ""
+                    )}
+                    onClick={() => scrollToSection(menu.name)}
+                  >
+                    <span
+                      className={twMerge(
+                        "group-hover:visible",
+                        activeSection === menu.name ? "visible" : "invisible"
+                      )}
+                    >
+                      &lt;
+                    </span>
+                    {menu.name.toUpperCase()}
+                    <span
+                      className={twMerge(
+                        "group-hover:visible",
+                        activeSection === menu.name ? "visible" : "invisible"
+                      )}
+                    >
+                      &gt;
+                    </span>
+                  </Link>
+                );
+              })}
             </ul>
           </div>
           {/* For Screens less than 640px */}
@@ -116,47 +143,43 @@ function Navbar() {
         </section>
         <section className="w-full sm:hidden">
           {toggle ? (
-            <ul className="list-none flex flex-col items-end justify-center font-[650] tracking-wider text-md w-full ">
-              <Link
-                to="/#home"
-                className="py-6 w-full flex justify-end px-2 hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => {
-                  setToggle(!toggle);
-                  scrollToSection("home");
-                }}
-              >
-                HOME
-              </Link>
-              <Link
-                to="/#about"
-                className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => {
-                  setToggle(!toggle);
-                  scrollToSection("about");
-                }}
-              >
-                ABOUT
-              </Link>
-              <Link
-                to="/#projects"
-                className="py-6 w-full flex justify-end px-2 hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => {
-                  setToggle(!toggle);
-                  scrollToSection("projects");
-                }}
-              >
-                PROJECTS
-              </Link>
-              <Link
-                to="/#contact"
-                className="py-6 w-full flex justify-end px-2  hover:text-[color:var(--primary-text-color)] duration-300 border-t"
-                onClick={() => {
-                  setToggle(!toggle);
-                  scrollToSection("contact");
-                }}
-              >
-                CONTACT
-              </Link>
+            <ul className="list-none flex flex-col items-center justify-center font-[650] tracking-wider text-md w-full border-t py-4">
+              {NAVBAR_MENU.map((menu) => {
+                return (
+                  <Link
+                    key={menu.id}
+                    to={menu.to}
+                    className={twMerge(
+                      "py-4 w-full flex items-start justify-center px-2 hover:text-[color:var(--primary-text-color)] duration-300 ",
+                      activeSection === menu.name
+                        ? "text-[color:var(--primary-text-color)]"
+                        : ""
+                    )}
+                    onClick={() => {
+                      setToggle(!toggle);
+                      scrollToSection(menu.name);
+                    }}
+                  >
+                    <span
+                      className={twMerge(
+                        "group-hover:visible",
+                        activeSection === menu.name ? "visible" : "invisible"
+                      )}
+                    >
+                      &lt;
+                    </span>
+                    {menu.name.toUpperCase()}
+                    <span
+                      className={twMerge(
+                        "group-hover:visible",
+                        activeSection === menu.name ? "visible" : "invisible"
+                      )}
+                    >
+                      &gt;
+                    </span>
+                  </Link>
+                );
+              })}
             </ul>
           ) : null}
         </section>
