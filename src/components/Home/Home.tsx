@@ -12,8 +12,6 @@ import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
-import { motion } from "framer-motion";
-
 function Home() {
   const isDarkMode = useRecoilValue(darkModeAtom);
 
@@ -127,9 +125,7 @@ function Home() {
               &lt;/html&gt;
             </p>
           </div>
-          <div
-            className="absolute h-10 w-6 border-2 border-[color:var(--tertiary-text-color)]  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center"
-          >
+          <div className="absolute h-10 w-6 border-2 border-[color:var(--tertiary-text-color)]  rounded-3xl bottom-14 translate-x-[50%] right-[50%] hidden md:flex items-start justify-center">
             <div className="w-1.5 my-1 bg-[color:var(--tertiary-text-color)] rounded-full aspect-square mouse"></div>
           </div>
           <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
