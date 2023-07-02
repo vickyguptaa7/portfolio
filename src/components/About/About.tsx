@@ -1,15 +1,21 @@
 import Wrapper from "../Wrapper/wrapper";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { motion } from "framer-motion";
-import image from "../../assets/myimg.png";
+import { useEffect } from "react";
 import { ABOUT_ME } from "../../data/about";
 import Education from "../Education/Education";
 
 function About() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
 
   return (
     <section data-section id="about" className="pt-24">
-      <div className="flex flex-col items-center justify-center px-8 header">
+      <div className="flex flex-col items-center justify-center px-8 header" data-aos="fade-in">
         <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
           ABOUT ME
         </h1>
@@ -19,27 +25,33 @@ function About() {
         <Wrapper className="flex flex-col items-center justify-center gap-8">
           <div className="relative flex flex-col items-center justify-center gap-4">
             {/* About Me */}
-            <motion.div
-              className="bg-[color:var(--secondary-background-color)] border-4 border-[color:var(--secondary-background-color)] rounded-full w-36 aspect-square"
-              initial={{
-                translateY: 8,
-              }}
-              animate={{
-                translateY: -8,
-                transition: {
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  duration: 2,
-                },
-              }}
+            <div data-aos="zoom-in-up">
+              <motion.div
+                className="bg-[color:var(--secondary-background-color)] border-4 border-[color:var(--secondary-background-color)] rounded-full w-36 aspect-square"
+                initial={{
+                  translateY: 8,
+                }}
+                animate={{
+                  translateY: -8,
+                  transition: {
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    duration: 2,
+                  },
+                }}
+              >
+                <img
+                  src={ABOUT_ME.codeImg}
+                  alt=""
+                  className="flex items-center justify-center object-cover w-full h-full rounded-full"
+                />
+              </motion.div>
+            </div>
+            <div
+              className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] "
+              data-aos="zoom-in-up"
+              data-aos-duration="500"
             >
-              <img
-                src={image}
-                alt=""
-                className="flex items-center justify-center object-cover w-full h-full rounded-full"
-              />
-            </motion.div>
-            <div className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] ">
               <p className="text-[1.18rem] text-center">
                 {ABOUT_ME.description}
               </p>

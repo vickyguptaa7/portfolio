@@ -8,17 +8,26 @@ import ACHIVEMENTS from "../../data/achievements";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import "./achievement.styles.css";
 
 function Achievements() {
   const isDarkMode = useRecoilValue(darkModeAtom);
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+    AOS.refresh();
+  }, []);
   return (
     <>
       <Wrapper>
         <section data-section id="achievement" className="pt-20">
-          <div className="flex flex-col items-center justify-center px-8 header">
+          <div className="flex flex-col items-center justify-center px-8 header"
+          data-aos="fade-in"
+          >
             <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
               ACHIEVEMENTS
             </h1>

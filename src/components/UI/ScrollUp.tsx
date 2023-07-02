@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { twMerge } from "tailwind-merge";
 
+import { motion } from "framer-motion";
+
 const ScrollUp = () => {
   const [isVisible, setIsVisible] = useState(false);
   const scrollToTop = () => {
@@ -22,7 +24,15 @@ const ScrollUp = () => {
   if (!isVisible) return null;
 
   return (
-    <div className=" fixed bottom-12 right-4  bg-[color:var(--secondary-background-color)] shadow-lg  aspect-square rounded-full flex justify-center items-center">
+    <motion.div
+      className=" fixed bottom-12 right-4  bg-[color:var(--secondary-background-color)] shadow-lg  aspect-square rounded-full flex justify-center items-center"
+      initial={{ opacity: 0, transform: "translateY(-100px)" }}
+      animate={{
+        opacity: 1,
+        transform: "translateY(0px)",
+        transition: { duration: 0.5 },
+      }}
+    >
       <button
         className={twMerge(
           "p-2 text-white w-[48px] sm:w-[56px] flex items-center justify-center "
@@ -31,7 +41,7 @@ const ScrollUp = () => {
       >
         <FaArrowUp className="text-2xl text-[color:var(--primary-text-color)]" />
       </button>
-    </div>
+    </motion.div>
   );
 };
 

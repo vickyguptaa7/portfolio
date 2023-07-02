@@ -1,5 +1,6 @@
 import college from "../assets/Education/college.webp";
 import school from "../assets/Education/school.png";
+import codeImg from "../assets/coding.webp";
 import my_image from "../assets/myimg.png";
 
 export const ABOUT_ME = {
@@ -10,6 +11,7 @@ export const ABOUT_ME = {
     student in Computer Engineering at Jamia Millia Islamia.`,
   resumeLink: "",
   image: my_image,
+  codeImg: codeImg,
 };
 
 export const COLLEGE = {

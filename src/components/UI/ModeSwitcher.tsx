@@ -5,6 +5,8 @@ import { useRecoilState } from "recoil";
 import { twMerge } from "tailwind-merge";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 
+import { motion } from "framer-motion";
+
 const ModeSwitcher = () => {
   const [isDarkMode, setIsDarkMode] = useRecoilState(darkModeAtom);
 
@@ -25,7 +27,15 @@ const ModeSwitcher = () => {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <div className="button fixed bottom-12 bg-[color:var(--color-primary)] shadow-lg w-12 md:w-16 h-10 rounded-r-full flex justify-end items-center">
+    <motion.div
+      className="button fixed bottom-12 bg-[color:var(--color-primary)] shadow-lg w-12 md:w-16 h-10 rounded-r-full flex justify-end items-center"
+      initial={{ opacity: 0, transform: "translateY(-100px)" }}
+      animate={{
+        opacity: 1,
+        transform: "translateY(0px)",
+        transition: { duration: 1 },
+      }}
+    >
       <button
         className={twMerge(
           "p-2 ",
@@ -38,7 +48,7 @@ const ModeSwitcher = () => {
         {isDarkMode && <MdDarkMode className="text-2xl " />}
         {!isDarkMode && <RiSunFill className="text-2xl " />}
       </button>
-    </div>
+    </motion.div>
   );
 };
 
