@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { twMerge } from "tailwind-merge";
 import TypewriterComponent from "typewriter-effect";
-import myImg from "../../assets/myimg.png";
-import CONTACTS from "../../constant/contact";
+import { ABOUT_ME } from "../../data/about";
+import CONTACTS from "../../data/contact";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import "../../styles.css";
 import Bubbles from "../Bubbles/Bubbles";
@@ -37,7 +37,7 @@ function Home() {
               <h1 className="mt-2 text-4xl font-semibold tracking-wider duration-1000 sm:text-5xl hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black text-[color:var(--tertiary-text-color)] ">
                 I'm{" "}
                 <span className="text-[color:var(--primary-text-color)] text-4xl  sm:text-5xl font-semibold ">
-                  Vicky Gupta
+                  {ABOUT_ME.name}
                 </span>
                 ,
               </h1>
@@ -52,11 +52,7 @@ function Home() {
               I'm&nbsp;
               <TypewriterComponent
                 options={{
-                  strings: [
-                    "full-stack web developer.",
-                    "DSA enthusiast.",
-                    "a student.",
-                  ],
+                  strings: ABOUT_ME.skills,
                   autoStart: true,
                   delay: 100,
                   loop: true,
@@ -73,9 +69,13 @@ function Home() {
             <p className="px-3 mt-2 text-sm text-gray-300 duration-1000 hover:translate-x-5 hover:duration-300 hover:scale-110">
               &lt;button&gt;
             </p>
-            <button className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black">
+            <Link
+              to={ABOUT_ME.resumeLink}
+              target="_blank"
+              className=" border-[--primary-text-color] border-2 px-6 py-2 font-semibold mx-9 mt-2 text-[color:var(--primary-text-color)] hover:bg-[color:var(--primary-text-color)] hover:text-white duration-1000 hover:translate-x-8 hover:duration-300 hover:scale-110 drop-shadow-lg shadow-black"
+            >
               SEE MY RESUME
-            </button>
+            </Link>
             <div className="flex gap-4 mt-2 mx-9">
               {CONTACTS.map((contact) => {
                 return (
@@ -115,7 +115,7 @@ function Home() {
           </div>
           <div className="absolute overflow-hidden change aspect-auto h-96 hidden sm:flex sm:w-[200px]  md:w-[240px] right-0 lg:w-[400px]  items-center justify-center xl:w-[480px] mb-12">
             <img
-              src={myImg}
+              src={ABOUT_ME.image}
               alt=""
               className="object-cover object-top w-full h-full"
             />

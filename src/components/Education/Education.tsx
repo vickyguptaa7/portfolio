@@ -1,11 +1,10 @@
 import { FaCode } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import { Link } from "react-router-dom";
-import CODING_PROFILES from "../../constant/codingProfiles";
+import CODING_PROFILES from "../../data/codingProfiles";
 import Tooltip from "../UI/Tooltip";
 
-import college from "../../assets/Education/jmi.webp";
-import school from "../../assets/Education/oxford.png";
+import { COLLEGE, SCHOOL } from "../../data/about";
 
 const Education = () => {
   return (
@@ -52,31 +51,35 @@ const Education = () => {
       <div className="left-0 flex flex-col items-center justify-around w-full gap-8 mb-4 md:items-start md:flex-row md:absolute -bottom-52">
         <div className="p-6 px-7 text-[color:var(--primary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] hover:-translate-y-3 duration-1000 hover:duration-500 ">
           <div className="flex gap-4">
-            <img src={college} className="w-20 h-20 rounded-full" alt="" />
+            <img src={COLLEGE.icon} className="w-20 h-20 rounded-full" alt="" />
             <div className="flex flex-col">
               <h2 className="text-[color:var(--secondary-text-color)] font-[550] text-xl  ">
-                Jamia Millia Islamia, New Delhi
+                {COLLEGE.name}
               </h2>
               <p className="text-[color:var(--secondary-text-color)]">
-                B.Tech, Computer Engineering
+                {COLLEGE.course}
               </p>
               <p className="text-right text-[color:var(--secondary-text-color)] text-sm mt-2">
-                2020 - Present
+                {COLLEGE.duration}
               </p>
             </div>
           </div>
         </div>
         <div className="p-6 text-[color:var(--secondary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] flex  gap-4 md:mt-6 hover:-translate-y-3 duration-1000 hover:duration-500 ">
-          <img src={school} className="w-20 h-20 bg-white rounded-full" alt="" />
+          <img
+            src={SCHOOL.icon}
+            className="w-20 h-20 bg-white rounded-full"
+            alt=""
+          />
           <div className="flex flex-col">
             <h2 className="text-[color:var(--secondary-text-color)] font-[550] text-xl ">
-              Oxford Public School, New Delhi
+              {SCHOOL.name}
             </h2>
             <p className="text-[color:var(--secondary-text-color)]">
-              Intermediate, Science Stream
+              {SCHOOL.course}
             </p>
             <p className="text-right text-[color:var(--secondary-text-color)] text-sm mt-2">
-              2018 - 2020
+              {SCHOOL.duration}
             </p>
           </div>
         </div>

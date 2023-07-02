@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { twMerge } from "tailwind-merge";
-import CONTACTS from "../../constant/contact";
+import CONTACTS from "../../data/contact";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Wrapper from "../Wrapper/wrapper";
 
@@ -9,7 +9,11 @@ const Contact = () => {
   const isDarkMode = useRecoilValue(darkModeAtom);
   return (
     <>
-      <section data-section id="contact" className="pt-24 ">
+      <section
+        data-section
+        id="contact"
+        className="flex flex-col items-center justify-center pt-24"
+      >
         <div className="flex flex-col items-center justify-center px-8 header">
           <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
             GET IN TOUCH
@@ -17,7 +21,7 @@ const Contact = () => {
           <div className="h-[0.30rem] w-10 bg-[color:var(--color-primary)] rounded-full"></div>
         </div>
         <div className="w-full py-8 lg:py-16 bg-[color:var(--color-primary)] mt-24 relative ">
-          <Wrapper className="flex flex-col items-center justify-center gap-4 lg:gap-8 lg:flex-row-reverse">
+          <Wrapper className="flex flex-col items-center justify-center gap-4 lg:gap-8 ">
             <div className="flex flex-col items-center justify-center w-2/3 gap-2">
               <p className=" text-[1.2rem] tracking-wide text-center text-white w-full">
                 I'm currently looking for any new opportunities, my inbox is
@@ -52,7 +56,7 @@ const Contact = () => {
                 SEE MY RESUME
               </button>
             </div>
-            <div className="w-full sm:w-4/5 lg:w-full mt-8 border-8 border-[color:var(--secondary-background-color)] shadow-lg shadow-[color:var(--primary-shadow-color)] h-[300px] lg:mt-0 lg:h-[400px] flex items-center justify-center bg-[color:var(--secondary-background-color)]">
+            <div className="w-full  mt-4 border-8 border-[color:var(--secondary-background-color)] shadow-lg shadow-[color:var(--primary-shadow-color)] h-[300px] lg:h-[350px] flex items-center justify-center bg-[color:var(--secondary-background-color)]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.02670427057078!2d77.28255034027204!3d28.556929835391184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d2a5c32827%3A0x399703d8db4a8713!2sMariyam%20Residency!5e0!3m2!1sen!2sin!4v1688108537681!5m2!1sen!2sin"
                 width="100%"

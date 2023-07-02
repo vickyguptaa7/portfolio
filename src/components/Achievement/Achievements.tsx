@@ -4,13 +4,13 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { twMerge } from "tailwind-merge";
-import ACHIVEMENTS from "../../constant/achievements";
+import ACHIVEMENTS from "../../data/achievements";
 import Bubbles from "../Bubbles/Bubbles";
 import Wrapper from "../Wrapper/wrapper";
 
-import "./achievement.styles.css"
-import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import { useRecoilValue } from "recoil";
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
+import "./achievement.styles.css";
 
 function Achievements() {
   const isDarkMode = useRecoilValue(darkModeAtom);
@@ -26,7 +26,7 @@ function Achievements() {
           </div>
           <div className="my-12">
             <VerticalTimeline
-              lineColor={isDarkMode?"#0078e1":"#05cbf7"}
+              lineColor={isDarkMode ? "#0078e1" : "#05cbf7"}
               className="pt-16 "
               animate={true}
             >
@@ -56,7 +56,7 @@ function Achievements() {
                     >
                       {achieve.date}
                     </h3>
-                    <div className="">
+                    <div className="mb-2">
                       <h2
                         style={{
                           color: "var(--primary-text-color)",
@@ -81,7 +81,7 @@ function Achievements() {
                         {achieve.description}
                       </p>
                       <button
-                        className="px-6 py-2 mt-4 text-white bg-[color:var(--primary-text-color)] font-semibold shadow-md hover:scale-105 duration-1000 hover:duration-300 active:scale-95"
+                        className="px-6 py-2 rounded-sm text-sm mt-4 text-white bg-[color:var(--primary-text-color)] font-semibold shadow-md hover:scale-105 duration-1000 hover:duration-300 active:scale-95"
                         onClick={() => window.open(achieve.link, "_blank")}
                       >
                         VIEW

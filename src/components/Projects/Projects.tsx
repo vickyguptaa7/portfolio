@@ -5,7 +5,7 @@ import { useState } from "react";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
-import { PROJECTS, SMALL_PROJECTS } from "../../constant/projectDetails";
+import { PROJECTS, SMALL_PROJECTS } from "../../data/projectDetails";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Bubbles from "../Bubbles/Bubbles";
 

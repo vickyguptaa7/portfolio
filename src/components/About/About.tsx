@@ -2,6 +2,7 @@ import Wrapper from "../Wrapper/wrapper";
 
 import { motion } from "framer-motion";
 import image from "../../assets/myimg.png";
+import { ABOUT_ME } from "../../data/about";
 import Education from "../Education/Education";
 
 function About() {
@@ -38,11 +39,7 @@ function About() {
               />
             </motion.div>
             <div className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] ">
-              <p className="text-[1.18rem] text-center">
-                Hi, I'm Vicky Gupta. I'm a self-taught, passionate full-stack
-                web developer from Delhi, 🇮🇳India. I'm currently a B.Tech
-                student in Computer Engineering at Jamia Millia Islamia.
-              </p>
+              <p className="text-[1.18rem] text-center">{ABOUT_ME.description}</p>
             </div>
             <Education />
           </div>

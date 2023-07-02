@@ -87,11 +87,15 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
       >
         <img
           src={isDarkMode ? project.imgUrl.dark : project.imgUrl.light}
-          className="object-cover object-top w-full h-full duration-500 border-4 border-[color:var(--secondary-background-color)] rounded-sm "
+          className="object-cover object-top w-full h-full duration-500 border-4 border-[color:var(--primary-background-color)] rounded-sm "
           alt=""
         />
-        {/* <div className={twMerge("absolute -top-2 rounded-lg -left-2 w-[calc(100%+30px)] h-[calc(100%+20px)] bg-[#ff2d75] ",index&1?"-rotate-0":"rotate-0")}>
-      </div> */}
+        {/* <div
+          className={twMerge(
+            "absolute top-0 rounded-md -z-30 scale-[1.04] left-0 w-[calc(100%+0px)] h-[calc(100%+0px)] bg-[#ff2d75] ",
+            index & 1 ? "-rotate-6" : "rotate-6"
+          )}
+        ></div> */}
       </div>
     </div>
   );
