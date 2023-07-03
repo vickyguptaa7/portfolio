@@ -21,7 +21,7 @@ const Education = () => {
           <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
         </div>
         <div
-          className="flex items-center w-full gap-12 px-4 py-4 bg-[color:var(--secondary-background-color)] rounded-sm shadow-lg justify-evenly shadow-[color:var(--secondary-shadow-color)] md:shadow-[color:var(--primary-shadow-color)]"
+          className="flex items-center w-full gap-12 px-4 py-4 bg-[color:var(--secondary-background-color)] rounded-sm shadow-lg justify-evenly shadow-[color:var(--secondary-shadow-color)] md:shadow-[color:var(--primary-shadow-color)] z-10"
           data-aos="zoom-in-up"
         >
           {CODING_PROFILES.map((profile) => {

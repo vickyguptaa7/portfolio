@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { twMerge } from "tailwind-merge";
+import { ABOUT_ME } from "../../data/about";
 import CONTACTS from "../../data/contact";
 import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Wrapper from "../Wrapper/wrapper";
@@ -41,14 +42,13 @@ const Contact = () => {
                 always open. Whether you have a question or just want to say hi,
                 I'll try my best to get back to you!
               </p>
-              <div className="flex mt-6 gap-7">
+              <div className="flex mt-6 gap-7" data-aos="zoom-in">
                 {CONTACTS.map((contact) => {
                   return (
                     <Link
                       key={contact.id}
                       to={contact.link}
-                      className="p-1 bg-[color:var(--secondary-background-color)] rounded-sm  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 shadow-[color:var(--primary-shadow-color)] shadow-sm"
-                      data-aos="zoom-in"
+                      className="p-0.5 bg-[color:var(--secondary-background-color)] rounded-sm  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 shadow-[color:var(--primary-shadow-color)] shadow-sm"
                     >
                       <img
                         src={
@@ -56,20 +56,22 @@ const Contact = () => {
                             ? contact.icon_dark
                             : contact.icon
                         }
-                        className={twMerge("w-7", contact.className)}
+                        className={twMerge("w-8", contact.className)}
                         alt=""
                       />
                     </Link>
                   );
                 })}
               </div>
-              <button
-                className="px-8 py-3 mt-2 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95 tracking-wide"
-                onClick={() => window.open("mailto:vickyguptaa7@gmail.com")}
-                data-aos="fade-up"
-              >
-                SEE MY RESUME
-              </button>
+              <div className="mt-4" data-aos="fade-up">
+                <Link
+                  className="px-8 py-3 mt-2 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95 tracking-wide"
+                  to={ABOUT_ME.resumeLink}
+                  target="_blank"
+                >
+                  SEE MY RESUME
+                </Link>
+              </div>
             </div>
             <div
               className="w-full  mt-4 border-8 border-[color:var(--secondary-background-color)] shadow-lg shadow-[color:var(--primary-shadow-color)] h-[300px] lg:h-[350px] flex items-center justify-center bg-[color:var(--secondary-background-color)]"

@@ -89,13 +89,14 @@ function Projects() {
             );
           })}
         </Wrapper>
-        <button
-          className="px-6 py-2 mt-12 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
-          onClick={() => setIsShownAll((prev) => !prev)}
-          data-aos="zoom-in"
-        >
-          {isShownAll ? "SHOW LESS" : "SHOW MORE"}
-        </button>
+        <div data-aos="zoom-in">
+          <button
+            className="px-6 py-2 mt-12 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
+            onClick={() => setIsShownAll((prev) => !prev)}
+          >
+            {isShownAll ? "SHOW LESS" : "SHOW MORE"}
+          </button>
+        </div>
         <div className="absolute -top-20 w-[110%] -z-10 -translate-x-5 h-56 bg-[--color-primary] rotate-3 mt-6"></div>
         <div className="absolute -bottom-16 w-[110%] -z-10 -translate-x-5 h-56 bg-[--color-primary] rotate-3"></div>
       </div>

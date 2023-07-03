@@ -8,13 +8,13 @@ const CODING_PROFILES = [
     icon: icons.codeforces,
     description: "Codeforces : Expert, Max Rating: 1695",
   },
-  {
-    id: 2,
-    name: "Codechef",
-    link: "https://www.codechef.com/users/vickygupta_07",
-    icon: icons.codechef,
-    description: "Codechef : 2 Star, Max Rating: 1547",
-  },
+  // {
+  //   id: 2,
+  //   name: "Codechef",
+  //   link: "https://www.codechef.com/users/vickygupta_07",
+  //   icon: icons.codechef,
+  //   description: "Codechef : 2 Star, Max Rating: 1547",
+  // },
   {
     id: 3,
     name: "Leetcode",

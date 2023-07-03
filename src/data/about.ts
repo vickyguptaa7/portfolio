@@ -9,9 +9,10 @@ export const ABOUT_ME = {
   description: `Hi, I'm Vicky Gupta. I'm a self-taught, passionate full-stack
     web developer from Delhi, 🇮🇳India. I'm currently a B.Tech
     student in Computer Engineering at Jamia Millia Islamia.`,
-  resumeLink: "",
   image: my_image,
   codeImg: codeImg,
+  resumeLink:
+    "https://drive.google.com/file/d/1XY3laHq5E781TUEJ6apap02qkwQRonGT/view?usp=drive_link",
 };
 
 export const COLLEGE = {
