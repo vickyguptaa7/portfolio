@@ -158,36 +158,36 @@ const SMALL_PROJECTS = [
       "https://github.com/vickyguptaa7/Learning-Projects/tree/master/4.Joke%20Teller",
     techStack: ["Javascript", "Html", "TailwindCss"],
   },
-  {
-    id: 7,
-    name: "Skeleton Loader",
-    icon: PROJECT_IMAGE.skeleton_icon,
-    description: "",
-    imgUrl: {
-      light: PROJECT_IMAGE.skeleton,
-      dark: PROJECT_IMAGE.skeleton,
-    },
-    liveLink:
-      "https://vickyguptaa7.github.io/Mini-Projects/18.Skeleton%20Loader/dist/index.html",
-    githubLink:
-      "https://github.com/vickyguptaa7/Mini-Projects/tree/master/18.Skeleton%20Loader",
-    techStack: ["Javascript", "Html", "TailwindCss"],
-  },
-  {
-    id: 8,
-    name: "Progress Steps",
-    icon: PROJECT_IMAGE.progress_icon,
-    description: "",
-    imgUrl: {
-      light: PROJECT_IMAGE.progress,
-      dark: PROJECT_IMAGE.progress,
-    },
-    liveLink:
-      "https://vickyguptaa7.github.io/Mini-Projects/2.Progress_Steps/dist/index.html",
-    githubLink:
-      "https://github.com/vickyguptaa7/Mini-Projects/tree/master/2.Progress_Steps",
-    techStack: ["Javascript", "Html", "TailwindCss"],
-  },
+  // {
+  //   id: 7,
+  //   name: "Skeleton Loader",
+  //   icon: PROJECT_IMAGE.skeleton_icon,
+  //   description: "",
+  //   imgUrl: {
+  //     light: PROJECT_IMAGE.skeleton,
+  //     dark: PROJECT_IMAGE.skeleton,
+  //   },
+  //   liveLink:
+  //     "https://vickyguptaa7.github.io/Mini-Projects/18.Skeleton%20Loader/dist/index.html",
+  //   githubLink:
+  //     "https://github.com/vickyguptaa7/Mini-Projects/tree/master/18.Skeleton%20Loader",
+  //   techStack: ["Javascript", "Html", "TailwindCss"],
+  // },
+  // {
+  //   id: 8,
+  //   name: "Progress Steps",
+  //   icon: PROJECT_IMAGE.progress_icon,
+  //   description: "",
+  //   imgUrl: {
+  //     light: PROJECT_IMAGE.progress,
+  //     dark: PROJECT_IMAGE.progress,
+  //   },
+  //   liveLink:
+  //     "https://vickyguptaa7.github.io/Mini-Projects/2.Progress_Steps/dist/index.html",
+  //   githubLink:
+  //     "https://github.com/vickyguptaa7/Mini-Projects/tree/master/2.Progress_Steps",
+  //   techStack: ["Javascript", "Html", "TailwindCss"],
+  // },
 ];
 
 export { PROJECTS, SMALL_PROJECTS };

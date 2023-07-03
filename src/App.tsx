@@ -35,7 +35,6 @@ function App() {
         <Projects />
         <Achievements />
         <Contact />
-        <Loader />
       </main>
       <Footer />
       <ModeSwitcher />
