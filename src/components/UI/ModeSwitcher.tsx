@@ -7,7 +7,11 @@ import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 
 import { motion } from "framer-motion";
 
-const ModeSwitcher = () => {
+interface IPROPS {
+  isVisible?: boolean;
+}
+
+const ModeSwitcher: React.FC<IPROPS> = ({ isVisible = true }) => {
   const [isDarkMode, setIsDarkMode] = useRecoilState(darkModeAtom);
 
   useEffect(() => {
@@ -26,6 +30,9 @@ const ModeSwitcher = () => {
     }
     setIsDarkMode(!isDarkMode);
   };
+
+  if (!isVisible) return null;
+
   return (
     <motion.div
       className="button fixed bottom-12 bg-[color:var(--color-primary)] shadow-lg w-12 md:w-16 h-10 rounded-r-full flex justify-end items-center"

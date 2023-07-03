@@ -92,7 +92,7 @@ function Projects() {
         <button
           className="px-6 py-2 mt-12 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
           onClick={() => setIsShownAll((prev) => !prev)}
-          data-aos="zoom-in-up"
+          data-aos="zoom-in"
         >
           {isShownAll ? "SHOW LESS" : "SHOW MORE"}
         </button>

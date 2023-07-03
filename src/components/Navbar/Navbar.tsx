@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
+import ScrollProgress from "../UI/scrollProgress";
 import Wrapper from "../Wrapper/wrapper";
 
 const NAVBAR_MENU = [
@@ -30,7 +31,7 @@ const NAVBAR_MENU = [
 function Navbar() {
   const [activeSection, setActiveSection] = useState<string>("home");
   const sections = useRef<NodeListOf<HTMLElement>>();
-  console.log(activeSection);
+
   const handleScroll = () => {
     const pageYOffset = window.pageYOffset;
 
@@ -75,118 +76,119 @@ function Navbar() {
   };
 
   return (
-    <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-[color:var(--secondary-background-color)]">
-      <Wrapper>
-        <section className="flex items-center justify-between w-full">
-          <Link
-            to="/"
-            className="flex gap-2 py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
-          >
-            <h1
-              className="font-[650] tracking-wider text-xl lg:text-2xl"
+    <>
+      <nav className="flex flex-col items-center justify-between shadow text-[--tertiary-text-color] fixed top-0 w-full z-10 bg-[color:var(--secondary-background-color)]">
+        <ScrollProgress />
+        <Wrapper>
+          <section className="flex items-center justify-between w-full">
+            <Link
+              to="/"
+              className="flex gap-2 py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
             >
-              <span className="text-[color:var(--primary-text-color)] text-xl lg:text-2xl">
-                &lt;V/&gt;
-              </span>
-              &nbsp; VICKY GUPTA
-            </h1>
-          </Link>
-          {/* For Screens greater than 640px */}
-          <div className="hidden sm:flex">
-            <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
-              {NAVBAR_MENU.map((menu) => {
-                return (
-                  <Link
-                    key={menu.id}
-                    to={menu.to}
-                    className={twMerge(
-                      "py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group ",
-                      activeSection === menu.name
-                        ? "text-[color:var(--primary-text-color)]"
-                        : ""
-                    )}
-                    onClick={() => scrollToSection(menu.name)}
-                  >
-                    <span
+              <h1 className="font-[650] tracking-wider text-xl lg:text-2xl">
+                <span className="text-[color:var(--primary-text-color)] text-xl lg:text-2xl">
+                  &lt;V/&gt;
+                </span>
+                &nbsp; VICKY GUPTA
+              </h1>
+            </Link>
+            {/* For Screens greater than 640px */}
+            <div className="hidden sm:flex">
+              <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
+                {NAVBAR_MENU.map((menu) => {
+                  return (
+                    <Link
+                      key={menu.id}
+                      to={menu.to}
                       className={twMerge(
-                        "group-hover:visible",
-                        activeSection === menu.name ? "visible" : "invisible"
+                        "py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group ",
+                        activeSection === menu.name
+                          ? "text-[color:var(--primary-text-color)]"
+                          : ""
                       )}
+                      onClick={() => scrollToSection(menu.name)}
                     >
-                      &lt;
-                    </span>
-                    {menu.name.toUpperCase()}
-                    <span
+                      <span
+                        className={twMerge(
+                          "group-hover:visible",
+                          activeSection === menu.name ? "visible" : "invisible"
+                        )}
+                      >
+                        &lt;
+                      </span>
+                      {menu.name.toUpperCase()}
+                      <span
+                        className={twMerge(
+                          "group-hover:visible",
+                          activeSection === menu.name ? "visible" : "invisible"
+                        )}
+                      >
+                        &gt;
+                      </span>
+                    </Link>
+                  );
+                })}
+              </ul>
+            </div>
+            {/* For Screens less than 640px */}
+            <div className="sm:hidden">
+              <button
+                className="px-2 py-5 md:px-4 md:py-6"
+                onClick={() => setToggle(!toggle)}
+              >
+                {toggle ? (
+                  <RxCross2 className="text-[24px]" />
+                ) : (
+                  <RxHamburgerMenu className="text-[24px]" />
+                )}
+              </button>
+            </div>
+          </section>
+          <section className="w-full sm:hidden">
+            {toggle ? (
+              <ul className="list-none flex flex-col items-center justify-center font-[650] tracking-wider text-md w-full border-t py-4">
+                {NAVBAR_MENU.map((menu) => {
+                  return (
+                    <Link
+                      key={menu.id}
+                      to={menu.to}
                       className={twMerge(
-                        "group-hover:visible",
-                        activeSection === menu.name ? "visible" : "invisible"
+                        "py-4 w-full flex items-start justify-center px-2 hover:text-[color:var(--primary-text-color)] duration-300 ",
+                        activeSection === menu.name
+                          ? "text-[color:var(--primary-text-color)]"
+                          : ""
                       )}
+                      onClick={() => {
+                        setToggle(!toggle);
+                        scrollToSection(menu.name);
+                      }}
                     >
-                      &gt;
-                    </span>
-                  </Link>
-                );
-              })}
-            </ul>
-          </div>
-          {/* For Screens less than 640px */}
-          <div className="sm:hidden">
-            <button
-              className="px-2 py-5 md:px-4 md:py-6"
-              onClick={() => setToggle(!toggle)}
-            >
-              {toggle ? (
-                <RxCross2 className="text-[24px]" />
-              ) : (
-                <RxHamburgerMenu className="text-[24px]" />
-              )}
-            </button>
-          </div>
-        </section>
-        <section className="w-full sm:hidden">
-          {toggle ? (
-            <ul className="list-none flex flex-col items-center justify-center font-[650] tracking-wider text-md w-full border-t py-4">
-              {NAVBAR_MENU.map((menu) => {
-                return (
-                  <Link
-                    key={menu.id}
-                    to={menu.to}
-                    className={twMerge(
-                      "py-4 w-full flex items-start justify-center px-2 hover:text-[color:var(--primary-text-color)] duration-300 ",
-                      activeSection === menu.name
-                        ? "text-[color:var(--primary-text-color)]"
-                        : ""
-                    )}
-                    onClick={() => {
-                      setToggle(!toggle);
-                      scrollToSection(menu.name);
-                    }}
-                  >
-                    <span
-                      className={twMerge(
-                        "group-hover:visible",
-                        activeSection === menu.name ? "visible" : "invisible"
-                      )}
-                    >
-                      &lt;
-                    </span>
-                    {menu.name.toUpperCase()}
-                    <span
-                      className={twMerge(
-                        "group-hover:visible",
-                        activeSection === menu.name ? "visible" : "invisible"
-                      )}
-                    >
-                      &gt;
-                    </span>
-                  </Link>
-                );
-              })}
-            </ul>
-          ) : null}
-        </section>
-      </Wrapper>
-    </nav>
+                      <span
+                        className={twMerge(
+                          "group-hover:visible",
+                          activeSection === menu.name ? "visible" : "invisible"
+                        )}
+                      >
+                        &lt;
+                      </span>
+                      {menu.name.toUpperCase()}
+                      <span
+                        className={twMerge(
+                          "group-hover:visible",
+                          activeSection === menu.name ? "visible" : "invisible"
+                        )}
+                      >
+                        &gt;
+                      </span>
+                    </Link>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </section>
+        </Wrapper>
+      </nav>
+    </>
   );
 }
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import About from "./components/About/About";
 import Achievements from "./components/Achievement/Achievements";
 import Contact from "./components/Contact/Contact";
@@ -6,10 +7,24 @@ import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
 import Skill from "./components/Tech Stack/TechStack";
+import Loader from "./components/UI/Loader";
 import ModeSwitcher from "./components/UI/ModeSwitcher";
 import ScrollUp from "./components/UI/ScrollUp";
 
 function App() {
+  const [showLoader, setShowLoader] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => setShowLoader(false), 3000);
+  }, []);
+
+  if (showLoader)
+    return (
+      <div className="w-screen h-screen bg-transparent">
+        <Loader />;
+        <ModeSwitcher isVisible={false} />
+      </div>
+    );
   return (
     <>
       <Navbar />
@@ -20,6 +35,7 @@ function App() {
         <Projects />
         <Achievements />
         <Contact />
+        <Loader />
       </main>
       <Footer />
       <ModeSwitcher />
