@@ -21,7 +21,7 @@ const Education = () => {
           <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
         </div>
         <div
-          className="flex items-center w-full gap-12 px-4 py-4 bg-[color:var(--secondary-background-color)] rounded-sm shadow-lg justify-evenly shadow-[color:var(--secondary-shadow-color)] md:shadow-[color:var(--primary-shadow-color)] z-10"
+          className="flex items-center w-full gap-12 px-4 py-4 bg-[color:var(--secondary-background-color)] rounded-sm shadow-lg justify-evenly shadow-[color:var(--secondary-shadow-color)] md:shadow-[color:var(--primary-shadow-color)] z-[5]"
           data-aos="zoom-in-up"
         >
           {CODING_PROFILES.map((profile) => {
@@ -30,10 +30,15 @@ const Education = () => {
                 key={profile.id}
                 className="group flex items-center text-sm text-[color:var(--secondary-text-color)] relative"
               >
-                <Link to={profile.link} target="_blank">
+                <Link
+                  to={profile.link}
+                  aria-label={profile.name}
+                  target="_blank"
+                >
                   <img
                     src={profile.icon}
                     className="min-w-[30px] max-w-[30px] md:min-w-[36px] md:max-w-[36px] duration-1000 aspect-square hover:scale-125 hover:duration-300 "
+                    alt=""
                   />
                 </Link>
                 <Tooltip
@@ -58,8 +63,9 @@ const Education = () => {
         <div className="h-[0.30rem] w-10 bg-white rounded-full"></div>
       </div>
       <div className="left-0 flex flex-col items-center justify-around w-full gap-8 mb-4 md:items-start md:flex-row md:absolute -bottom-52">
-        <div className="p-6 px-7 text-[color:var(--primary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] hover:-translate-y-3 duration-1000 hover:duration-500 "
-        data-aos="fade-right"
+        <div
+          className="p-6 px-7 text-[color:var(--primary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] hover:-translate-y-3 duration-1000 hover:duration-500 "
+          data-aos="fade-right"
         >
           <div className="flex gap-4">
             <img src={COLLEGE.icon} className="w-20 h-20 rounded-full" alt="" />
@@ -76,8 +82,9 @@ const Education = () => {
             </div>
           </div>
         </div>
-        <div className="p-6 text-[color:var(--secondary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] flex  gap-4 md:mt-6 hover:-translate-y-3 duration-1000 hover:duration-500 "
-        data-aos="fade-left"
+        <div
+          className="p-6 text-[color:var(--secondary-text-color)] bg-[color:var(--secondary-background-color)] rounded-lg shadow-lg shadow-[color:var(--primary-shadow-color)] md:shadow-[color:var(--secondary-shadow-color)] flex  gap-4 md:mt-6 hover:-translate-y-3 duration-1000 hover:duration-500 "
+          data-aos="fade-left"
         >
           <img
             src={SCHOOL.icon}

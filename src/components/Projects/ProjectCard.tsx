@@ -30,7 +30,11 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
         )}
       >
         <h2 className="text-2xl font-[550] whitespace-nowrap flex items-center justify-center text-[color:var(--tertiary-text-color)] ">
-          <img src={project.icon} className="w-12 aspect-square" alt="" />
+          <img
+            src={project.icon}
+            className="w-12 aspect-square"
+            alt={project.name}
+          />
           {project.name}
         </h2>
         <div
@@ -70,10 +74,18 @@ const ProjectCard: React.FC<IPROPS> = ({ index, project }) => {
           })}
         </ul>
         <div className="flex items-center justify-center gap-4 mt-4 text-[color:var(--secondary-text-color)]">
-          <Link to={project.githubLink} target="_blank">
+          <Link
+            to={project.githubLink}
+            aria-label={`${project.name} project github Link`}
+            target="_blank"
+          >
             <LuGithub className="text-xl hover:text-[color:var(--primary-text-color)] hover:scale-125 duration-1000 hover:duration-300" />
           </Link>
-          <Link to={project.liveLink} target="_blank">
+          <Link
+            to={project.liveLink}
+            aria-label={`${project.name} project live Link`}
+            target="_blank"
+          >
             <LuExternalLink className="text-xl hover:text-[color:var(--primary-text-color)] hover:scale-125 duration-1000 hover:duration-300" />
           </Link>
         </div>

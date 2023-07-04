@@ -44,6 +44,7 @@ const ModeSwitcher: React.FC<IPROPS> = ({ isVisible = true }) => {
       }}
     >
       <button
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
         className={twMerge(
           "p-2 ",
           isDarkMode

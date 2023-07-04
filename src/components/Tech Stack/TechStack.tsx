@@ -42,6 +42,7 @@ function Skill() {
             {TECH_STACK.map((item) => {
               return (
                 <button
+                  aria-label={item.name}
                   key={item.id}
                   onClick={() => setCurrentStackType(item.name)}
                   className={twMerge(

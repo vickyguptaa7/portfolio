@@ -77,10 +77,18 @@ function Projects() {
                     })}
                   </ul>
                   <div className="flex items-center justify-center gap-4 mt-3 text-[color:var(--secondary-text-color)]">
-                    <Link to={project.githubLink} target="_blank">
+                    <Link
+                      to={project.githubLink}
+                      aria-label={`${project.name} project github Link`}
+                      target="_blank"
+                    >
                       <LuGithub className="text-lg hover:text-[color:var(--primary-text-color)] hover:scale-125 hover:duration-300" />
                     </Link>
-                    <Link to={project.liveLink} target="_blank">
+                    <Link
+                      to={project.liveLink}
+                      aria-label={`${project.name} project live Link`}
+                      target="_blank"
+                    >
                       <LuExternalLink className="text-lg hover:text-[color:var(--primary-text-color)] hover:scale-125  hover:duration-300" />
                     </Link>
                   </div>
@@ -92,6 +100,9 @@ function Projects() {
         <div data-aos="zoom-in">
           <button
             className="px-6 py-2 mt-12 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95"
+            aria-label={
+              isShownAll ? "Show less projects" : "Show more projects"
+            }
             onClick={() => setIsShownAll((prev) => !prev)}
           >
             {isShownAll ? "SHOW LESS" : "SHOW MORE"}

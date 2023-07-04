@@ -82,6 +82,7 @@ function Navbar() {
         <Wrapper>
           <section className="flex items-center justify-between w-full">
             <Link
+              aria-label="Vicky Gupta Portfolio"
               to="/"
               className="flex gap-2 py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 "
             >
@@ -94,10 +95,11 @@ function Navbar() {
             </Link>
             {/* For Screens greater than 640px */}
             <div className="hidden sm:flex">
-              <ul className="list-none flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
+              <div className=" flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
                 {NAVBAR_MENU.map((menu) => {
                   return (
                     <Link
+                      aria-label={menu.name}
                       key={menu.id}
                       to={menu.to}
                       className={twMerge(
@@ -128,12 +130,13 @@ function Navbar() {
                     </Link>
                   );
                 })}
-              </ul>
+              </div>
             </div>
             {/* For Screens less than 640px */}
             <div className="sm:hidden">
               <button
                 className="px-2 py-5 md:px-4 md:py-6"
+                aria-label={toggle ? "show drop menu" : "hide drop menu"}
                 onClick={() => setToggle(!toggle)}
               >
                 {toggle ? (
@@ -146,12 +149,13 @@ function Navbar() {
           </section>
           <section className="w-full sm:hidden">
             {toggle ? (
-              <ul className="list-none flex flex-col items-center justify-center font-[650] tracking-wider text-md w-full border-t py-4">
+              <div className="list-none flex flex-col items-center justify-center font-[650] tracking-wider text-md w-full border-t py-4">
                 {NAVBAR_MENU.map((menu) => {
                   return (
                     <Link
                       key={menu.id}
                       to={menu.to}
+                      aria-label={menu.name}
                       className={twMerge(
                         "py-4 w-full flex items-start justify-center px-2 hover:text-[color:var(--primary-text-color)] duration-300 ",
                         activeSection === menu.name
@@ -183,7 +187,7 @@ function Navbar() {
                     </Link>
                   );
                 })}
-              </ul>
+              </div>
             ) : null}
           </section>
         </Wrapper>

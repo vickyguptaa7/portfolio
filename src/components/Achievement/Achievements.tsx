@@ -25,8 +25,9 @@ function Achievements() {
     <>
       <Wrapper>
         <section data-section id="achievement" className="pt-20">
-          <div className="flex flex-col items-center justify-center px-8 header"
-          data-aos="fade-in"
+          <div
+            className="flex flex-col items-center justify-center px-8 header"
+            data-aos="fade-in"
           >
             <h1 className="text-[color:var(--color-primary)] text-3xl font-bold mb-2 text-center tracking-wide">
               ACHIEVEMENTS
@@ -91,6 +92,7 @@ function Achievements() {
                       </p>
                       <button
                         className="px-6 py-2 rounded-sm text-sm mt-4 text-white bg-[color:var(--primary-text-color)] font-semibold shadow-md hover:scale-105 duration-1000 hover:duration-300 active:scale-95"
+                        aria-label={`${achieve.title} View`}
                         onClick={() => window.open(achieve.link, "_blank")}
                       >
                         VIEW

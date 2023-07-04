@@ -46,6 +46,7 @@ const Contact = () => {
                 {CONTACTS.map((contact) => {
                   return (
                     <Link
+                      aria-label={contact.name}
                       key={contact.id}
                       to={contact.link}
                       className="p-0.5 bg-[color:var(--secondary-background-color)] rounded-sm  hover:scale-110 duration-1000 hover:duration-300 active:scale-95 shadow-[color:var(--primary-shadow-color)] shadow-sm"
@@ -66,6 +67,7 @@ const Contact = () => {
               <div className="mt-4" data-aos="fade-up">
                 <Link
                   className="px-8 py-3 mt-2 bg-[color:var(--secondary-background-color)] text-[color:var(--primary-text-color)] font-semibold shadow-md shadow-[color:var(--primary-shadow-color)] hover:scale-110 duration-1000 hover:duration-300 active:scale-95 tracking-wide"
+                  aria-label="Resume"
                   to={ABOUT_ME.resumeLink}
                   target="_blank"
                 >
@@ -78,6 +80,7 @@ const Contact = () => {
               data-aos="zoom-in"
             >
               <iframe
+                title="My Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.02670427057078!2d77.28255034027204!3d28.556929835391184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d2a5c32827%3A0x399703d8db4a8713!2sMariyam%20Residency!5e0!3m2!1sen!2sin!4v1688108537681!5m2!1sen!2sin"
                 width="100%"
                 height="100%"

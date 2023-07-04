@@ -34,6 +34,7 @@ const ScrollUp = () => {
       }}
     >
       <button
+        aria-label="Scroll to top"
         className={twMerge(
           "p-2 text-white w-[48px] sm:w-[56px] flex items-center justify-center "
         )}
