@@ -77,7 +77,7 @@ function Skill() {
           <Parallax
             className="w-full mt-8 "
             speed={0.3}
-            translateY={["-60px", "100px"]}
+            translateY={["-105px", "100px"]}
           >
             <div className="relative w-full h-[450px] flex flex-col font-semibold text-gray-300 items-center justify-center">
               <div
@@ -139,7 +139,7 @@ function Skill() {
                 CSS3
               </p>
               <p
-                className="cursor-default absolute text-xl translate-x-1/2 top-2/3 -left-4 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+                className="cursor-default absolute text-xl  top-2/3 -left-4 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-right"
               >
                 Tailwind
