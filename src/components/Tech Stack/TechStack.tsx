@@ -76,11 +76,11 @@ function Skill() {
         </div>
         <ParallaxProvider>
           <Parallax
-            className="w-full mt-8 "
+            className="w-full mt-20 "
             speed={0.3}
             translateY={["-105px", "100px"]}
           >
-            <div className="relative w-full h-[450px] flex flex-col font-semibold text-gray-300 items-center justify-center">
+            <div className="relative w-full h-[300px] flex flex-col font-semibold text-gray-300 items-center justify-center">
               <div
                 className="flex flex-wrap items-center justify-center w-full gap-12 sm:justify-around"
                 data-aos="zoom-in"
@@ -121,60 +121,96 @@ function Skill() {
                   );
                 })}
               </div>
+              <div
+                className="cursor-default absolute right-0  -top-4 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute right-0 text-2xl top-12 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-left"
+                className="text-2xl"
               >
                 HTML5
               </p>
+              </div>
+              <div
+                className="cursor-default absolute -top-0 left-10 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute text-2xl top-8 left-10 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-right"
+                className="text-2xl "
               >
                 Redux
               </p>
+              </div>
+              <div
+                className="cursor-default absolute left-[30%] top-[12%] hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute left-[30%] text-lg top-[20%] hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-up"
+                className="text-lg "
               >
                 CSS3
               </p>
+              </div>
+              <div
+                className="cursor-default absolute top-3/4 -left-4 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute text-xl  top-2/3 -left-4 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-right"
+                className="text-xl "
               >
                 Tailwind
               </p>
+              </div>
+              <div
+                className="cursor-default absolute right-[6%] -bottom-12 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute right-[10%] bottom-[25%] text-xl hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-left"
+                className="text-xl"
               >
                 MongoDB
               </p>
+              </div>
+              <div
+                className="cursor-default absolute right-[30%] top-[8%] hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute right-[30%] top-[15%] text-xl hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-up"
+                className="text-xl "
               >
                 Git
               </p>
+              </div>
+              <div
+                className="cursor-default absolute bottom-[8%] right-[50%] hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute bottom-[20%] right-[40%] text-xl hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-up"
+                className="text-xl"
               >
                 Express
               </p>
+              </div>
+              <div
+                className="cursor-default absolute left-[20%] -bottom-8  hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute left-[30%] bottom-10 text-xl hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-up"
+                className="text-xl"
               >
                 Github
               </p>
+              </div>
+              <div
+                className="cursor-default absolute  right-[25%] bottom-0 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
+              >
               <p
-                className="cursor-default absolute text-xl right-[20%] bottom-0 hover:text-[color:var(--primary-text-color)] duration-300 hover:scale-125"
                 data-aos="fade-up"
+                className="text-xl"
               >
                 Firebase
               </p>
+              </div>
             </div>
           </Parallax>
         </ParallaxProvider>

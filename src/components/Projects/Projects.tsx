@@ -21,7 +21,7 @@ function Projects() {
   }, []);
 
   return (
-    <section data-section className="pt-24" id="projects">
+    <section data-section className="pt-24 mt-36" id="projects">
       <Wrapper>
         <div
           className="flex flex-col items-center justify-center px-8 header"
