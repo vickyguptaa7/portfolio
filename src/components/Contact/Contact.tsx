@@ -38,9 +38,10 @@ const Contact = () => {
                 className=" text-[1.2rem] tracking-wide text-center text-white w-full"
                 data-aos="fade-up"
               >
-                I'm currently looking for any new opportunities, my inbox is
-                always open. Whether you have a question or just want to say hi,
-                I'll try my best to get back to you!
+                I am currently looking for new opportunities. My inbox is always
+                open, so feel free to reach out if you have any questions or
+                just want to say hi. I will do my best to get back to you as
+                soon as possible.
               </p>
               <div className="flex mt-6 gap-7" data-aos="zoom-in">
                 {CONTACTS.map((contact) => {

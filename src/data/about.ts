@@ -7,8 +7,7 @@ export const ABOUT_ME = {
   name: "Vicky Gupta",
   skills: ["full-stack web developer.", "DSA enthusiast.", "a student."],
   description: `Hi, I'm Vicky Gupta. I'm a self-taught, passionate full-stack
-    web developer from Delhi, 🇮🇳India. I'm currently a B.Tech
-    student in Computer Engineering at Jamia Millia Islamia.`,
+    web developer from Delhi, 🇮🇳India. I'm currently pursuing a B.Tech in Computer Engineering at Jamia Millia Islamia`,
   image: my_image,
   codeImg: codeImg,
   resumeLink:
