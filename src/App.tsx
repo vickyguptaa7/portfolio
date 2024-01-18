@@ -20,7 +20,7 @@ function App() {
 
   if (showLoader)
     return (
-      <div className="w-screen h-screen bg-transparent">
+      <div className="w-screen h-screen overflow-hidden bg-transparent">
         <Loader />;
         <ModeSwitcher isVisible={false} />
       </div>
