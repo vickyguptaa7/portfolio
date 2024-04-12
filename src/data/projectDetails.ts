@@ -29,7 +29,7 @@ const PROJECTS: IProjectInfo[] = [
 
   {
     id: 1,
-    name: "Graphical Authentication",
+    name: "Enkrypt",
     icon: PROJECT_IMAGE.graphical_icon,
     description: [
       "Graphical password authentication system, a secure authentication system based on user-chosen images, offering a personalized and robust method of login that enhances security.",
@@ -49,7 +49,7 @@ const PROJECTS: IProjectInfo[] = [
 
   {
     id: 1,
-    name: "Whiteboard",
+    name: "Scribble Verse",
     icon: PROJECT_IMAGE.whiteboard_icon,
     description: [
       "Whiteboard, a digital tool that emulates the functionality of a physical whiteboard. Users can draw, write, and take notes in a digital format.",
@@ -67,7 +67,7 @@ const PROJECTS: IProjectInfo[] = [
     },
     techStack: ["Javascript", "Html", "Tailwind css"],
     githubLink: "https://github.com/vickyguptaa7/WhiteBoard",
-    liveLink: "https://vickyguptaa7.github.io/WhiteBoard/",
+    liveLink: "https://vickyguptaa7.github.io/Scribble-Verse/",
   },
 ];
 
