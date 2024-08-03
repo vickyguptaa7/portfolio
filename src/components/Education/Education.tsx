@@ -78,6 +78,9 @@ const Education = () => {
                 <p className="text-[color:var(--secondary-text-color)]">
                   {COLLEGE.course}
                 </p>
+                <p className="text-[color:var(--secondary-text-color)]">
+                  Grade : {COLLEGE.grade}
+                </p>
                 <p className="text-right text-[color:var(--secondary-text-color)] text-sm mt-2">
                   {COLLEGE.duration}
                 </p>
@@ -99,6 +102,9 @@ const Education = () => {
               </h2>
               <p className="text-[color:var(--secondary-text-color)]">
                 {SCHOOL.course}
+              </p>
+              <p className="text-[color:var(--secondary-text-color)]">
+                Grade : {SCHOOL.grade}
               </p>
               <p className="text-right text-[color:var(--secondary-text-color)] text-sm mt-2">
                 {SCHOOL.duration}

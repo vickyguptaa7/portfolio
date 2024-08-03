@@ -48,7 +48,7 @@ function About() {
               </motion.div>
             </div>
             <div
-              className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[60%] "
+              className="flex flex-col items-center justify-center gap-4 tracking-wide text-white text-md sm:w-[90%] "
               data-aos="zoom-in-up"
               data-aos-duration="500"
             >

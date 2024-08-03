@@ -5,9 +5,8 @@ import my_image from "../assets/myimg.png";
 
 export const ABOUT_ME = {
   name: "Vicky Gupta",
-  skills: ["full-stack web developer.", "DSA enthusiast.", "a student."],
-  description: `Hi, I'm Vicky Gupta. I'm a self-taught, passionate full-stack
-    web developer from Delhi, 🇮🇳India. I'm currently pursuing a B.Tech in Computer Engineering at Jamia Millia Islamia`,
+  skills: ["full-stack web developer.", "DSA enthusiast.", "Software Engineer."],
+  description :`I’m Vicky Gupta, a passionate software engineer from Delhi, 🇮🇳India, with a strong background in competitive programming and software development. At AlgoSec and AlgoZenith, I’ve focused on enhancing platform performance and developing innovative features, always striving to improve and deliver impactful solutions.`,
   image: my_image,
   codeImg: codeImg,
   resumeLink:
@@ -17,8 +16,9 @@ export const ABOUT_ME = {
 export const COLLEGE = {
   name: "Jamia Millia Islamia, New Delhi",
   course: "B.Tech, Computer Engineering",
-  duration: "2020 - PResent",
+  duration: "2020 - 2024",
   icon: college,
+  grade: "9.87 CGPA",
 };
 
 export const SCHOOL = {
@@ -26,4 +26,5 @@ export const SCHOOL = {
   course: "Intermediate, Science Stream",
   duration: "2018 - 2020",
   icon: school,
+  grade: "94.8%",
 };
