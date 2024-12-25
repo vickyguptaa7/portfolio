@@ -56,7 +56,7 @@ const Loader = () => {
               animate={{
                 width: "100%",
                 transition: {
-                  duration: 3,
+                  duration: 1.5,
                   ease: "anticipate",
                 },
               }}

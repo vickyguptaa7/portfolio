@@ -22,7 +22,7 @@ function Skill() {
   }, []);
 
   return (
-    <section data-section className="mt-64 mb-12" id="tech-stack">
+    <section data-section className="mt-32 mb-12" id="tech-stack">
       <Wrapper className="flex flex-col items-center justify-center">
         <div
           className="flex flex-col items-center justify-center px-8 header"

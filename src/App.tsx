@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import About from "./components/About/About";
 import Achievements from "./components/Achievement/Achievements";
 import Contact from "./components/Contact/Contact";
+import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer/footer";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
@@ -15,7 +16,7 @@ function App() {
   const [showLoader, setShowLoader] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => setShowLoader(false), 3000);
+    setTimeout(() => setShowLoader(false), 1500);
   }, []);
 
   if (showLoader)
@@ -31,6 +32,7 @@ function App() {
       <main className="min-w-[360px] overflow-hidden">
         <Home />
         <About />
+        <Experience />
         <Skill />
         <Projects />
         <Achievements />

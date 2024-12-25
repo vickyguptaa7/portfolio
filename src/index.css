@@ -13,6 +13,8 @@
   --secondary-background-color: #fff;
   --primary-shadow-color: #06b6d4;
   --secondary-shadow-color: #d4d4d8;
+  --gray-color: #e4e7eb;
+  --gray-hover-color: rgb(245, 245, 245);
 }
 
 .dark-mode {
@@ -25,6 +27,8 @@
   --secondary-background-color: #0f172a;
   --primary-shadow-color: #0264b9;
   --secondary-shadow-color: #000;
+  --gray-color: #444444;
+  --gray-hover-color: rgb(41, 41, 41);
 }
 
 * {
