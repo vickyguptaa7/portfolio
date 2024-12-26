@@ -18,11 +18,16 @@ const NAVBAR_MENU = [
   },
   {
     id: 3,
+    name: "experience",
+    to: "/#experience",
+  },
+  {
+    id: 4,
     name: "projects",
     to: "/#projects",
   },
   {
-    id: 4,
+    id: 5,
     name: "contact",
     to: "/#contact",
   },
@@ -95,7 +100,7 @@ function Navbar() {
             </Link>
             {/* For Screens greater than 640px */}
             <div className="hidden sm:flex">
-              <div className=" flex items-center gap-4 md:gap-0 lg:gap-8 font-[650] tracking-wider text-md ">
+              <div className=" flex items-center md:gap-0 lg:gap-1 font-[650] tracking-wider text-md ">
                 {NAVBAR_MENU.map((menu) => {
                   return (
                     <Link
@@ -103,7 +108,7 @@ function Navbar() {
                       key={menu.id}
                       to={menu.to}
                       className={twMerge(
-                        "py-5 px-2 md:px-4 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group ",
+                        "py-5 px-2 md:py-6 hover:text-[color:var(--primary-text-color)] duration-300 group ",
                         activeSection === menu.name
                           ? "text-[color:var(--primary-text-color)]"
                           : ""

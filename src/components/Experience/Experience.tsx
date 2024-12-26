@@ -1,31 +1,27 @@
+import AOS from "aos";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { BsArrowUpShort } from "react-icons/bs";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { useRecoilValue } from "recoil";
+import { ExperienceData } from "../../data/expereince";
+import { darkModeAtom } from "../../recoil/atoms/darkModeAtom";
 import Wrapper from "../Wrapper/wrapper";
 
-const jobsData = [
-  {
-    title: "Software Development Engineer",
-    company: "AlgoSec",
-    location: "Hybrid • Gurugram, Haryana, India",
-    duration: "June 2024 - Present",
-    description:
-      "Developed and maintained network security applications, ensuring high performance and scalability. Worked with Java, Kubernetes, and cloud platforms like AWS and Azure.",
-  },
-  {
-    title: "Software Engineer Intern",
-    company: "AlgoZenith",
-    location: "Remote • New Delhi, India",
-    duration: "Aug 2023 - April 2024",
-    description:
-      "Contributed to educational content for competitive programming. Built tools to improve user experience.",
-  },
-];
-
 function Experience() {
+  const isDarkMode = useRecoilValue(darkModeAtom);
   const [activeTabId, setActiveTabId] = useState(0);
+  const navigateToUrl = (url: string) => {
+    return window.open(url, "_blank");
+  };
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
-    <section data-section className="pt-24 mt-36" id="projects">
+    <section data-section className="pt-32 mt-36" id="experience">
       <div
         className="flex flex-col items-center justify-center px-8 header"
         data-aos="fade-in"
@@ -37,7 +33,7 @@ function Experience() {
       </div>
       <div className="flex flex-col items-center justify-center w-full mt-12 ">
         <Wrapper>
-          <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col md:flex-row" data-aos="zoom-in-up">
             {/* Tabs */}
             <div className="flex mt-4 mb-6 md:flex-col md:mb-0 md:mr-8">
               {jobsData.map((job, i) => (
@@ -56,8 +52,8 @@ function Experience() {
             </div>
             {/* Tab Panels */}
             <div className="flex-1 ">
-              {jobsData.map(
-                (job, i) =>
+              {ExperienceData.map(
+                (experience, i) =>
                   activeTabId === i && (
                     <motion.div
                       key={i}
@@ -65,23 +61,69 @@ function Experience() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
                       transition={{ duration: 0.3 }}
-                      className="p-4 bg-[color:var(--primary-background-color)] shadow-lg shadow-[color:var(--secondary-shadow-color)] rounded-md"
+                      className="p-4 bg-[color:var(--secondary-background-color)] shadow-lg shadow-[color:var(--secondary-shadow-color)] rounded-xl group"
                     >
-                      <h3 className="text-xl font-semibold text-[color:var(--tertiary-text-color)]">
-                        {job.title}{" "}
+                      <h3 className="text-xl font-semibold text-[color:var(--tertiary-text-color)] flex flex-wrap mb-2 sm:mb-0">
+                        {experience.title}{" "}
                         <span className="text-[color:var(--color-primary)] text-xl">
-                          @ {job.company}
+                          &nbsp; @ {experience.company}
                         </span>
+                        {experience.url && (
+                          <span onClick={() => navigateToUrl(experience.url)}>
+                            <BsArrowUpShort className="text-xl font-bold cursor-pointer duration-300 rotate-45 -translate-x-2 translate-y-2 ms-1 group-hover:translate-y-0 group-hover:-translate-x-0 group-hover:text-[color:var(--color-primary)]" />
+                          </span>
+                        )}
                       </h3>
-                      <p className="mb-1 text-sm text-gray-400">
-                        {job.location}
+                      <p className="mb-1 text-sm text-[color:var(--secondary-text-color)]">
+                        {experience.location}
                       </p>
-                      <p className="mb-2 text-sm text-gray-400">
-                        {job.duration}
+                      <p className="mb-2 text-sm text-[color:var(--secondary-text-color)]">
+                        {experience.duration}
                       </p>
-                      <p className="text-[color:var(--tertiary-text-color)]">
-                        {job.description}
-                      </p>
+                      <div>
+                        {experience.description.map((desc, i) => (
+                          <div
+                            className="text-[color:var(--quaternary-text-color)] flex leading-7 tracking-wide mb-2"
+                            key={i}
+                          >
+                            <span className="w-4 mt-1 -translate-x-1.5">
+                              <MdKeyboardArrowRight className="text-[color:var(--color-primary)] text-xl" />
+                            </span>
+
+                            {desc}
+                          </div>
+                        ))}
+                      </div>
+                      {experience.certificate && (
+                        <div>
+                          <div className="text-[color:var(--quaternary-text-color)] flex leading-7 tracking-wide mb-2">
+                            <span className="w-4 mt-1 -translate-x-1.5">
+                              <MdKeyboardArrowRight className="text-[color:var(--color-primary)] text-xl" />
+                            </span>
+                            Completion &nbsp;
+                            <button
+                              className="underline text-[color:var(--color-primary)] cursor-pointer "
+                              onClick={() =>
+                                navigateToUrl(experience.certificate)
+                              }
+                            >
+                              certificate
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        {experience.techStack.map((technology, i) => (
+                          <div
+                            className={`text-[color:var(--color-primary)] text-sm px-3 py-1 ${
+                              isDarkMode ? "bg-slate-800" : "bg-gray-100"
+                            } rounded-full`}
+                            key={i}
+                          >
+                            {technology}
+                          </div>
+                        ))}
+                      </div>
                     </motion.div>
                   )
               )}
