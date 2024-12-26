@@ -36,7 +36,7 @@ function Experience() {
           <div className="flex flex-col md:flex-row" data-aos="zoom-in-up">
             {/* Tabs */}
             <div className="flex mt-4 mb-6 md:flex-col md:mb-0 md:mr-8">
-              {jobsData.map((job, i) => (
+              {ExperienceData.map((experience, i) => (
                 <button
                   key={i}
                   className={`px-4 py-2 text-left font-mono text-sm cursor-pointer border-l-4 transition-all ${
@@ -46,7 +46,7 @@ function Experience() {
                   }`}
                   onClick={() => setActiveTabId(i)}
                 >
-                  {job.company}
+                  {experience.company}
                 </button>
               ))}
             </div>
